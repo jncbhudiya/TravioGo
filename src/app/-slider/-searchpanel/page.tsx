@@ -6,9 +6,9 @@ import React from "react";
 
 function Searchpanel() {
   return (
-    <div className="absolute bottom-8 w-full flex justify-center px-4 ">
-      <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center justify-center gap-2 px-4 py-3 w-full max-w-[824px]">
-        <div className="flex items-center gap-2 px-4 py-2 w-full sm:w-auto">
+    <div className="absolute top-175 w-full flex justify-center px-4 ">
+      <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center justify-center gap-2 px-4 py-3 w-full max-w-[820px]">
+        <div className="flex items-center gap-2 px-4  w-full sm:w-auto">
           <div className="w-[50px] h-[50px] rounded-full border border-[#D8E0E6] flex items-center justify-center">
             <World />
           </div>

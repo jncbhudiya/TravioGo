@@ -1,9 +1,7 @@
+import Leftwhitearrow from "@/app/icon/-leftwhitearrow/page";
+import Rightwhitearrow from "@/app/icon/rightwhitearrow/page";
 import React from "react";
-import Trendingdestinations from "../-trendingdestinations/page";
-import World from "@/app/icon/-world/page";
-import Calender from "@/app/icon/-calender/page";
-import Face from "@/app/icon/-face/page";
-import Search from "@/app/icon/-search/page";
+
 
 function Navbar() {
   return (
@@ -11,7 +9,7 @@ function Navbar() {
       <div className="absolute inset-0 z-0">
         <div
           className="w-full h-full brightness-50 bg-cover bg-center  bg-[url('/images/3ce43c80fb00237c348c1fac0865ca7dda7999f2.jpg')] "
-          
+
         ></div>
       </div>
 
@@ -43,9 +41,13 @@ function Navbar() {
             Seamless Booking: 15,000+ Multi-Day Adventures Await
           </p>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+
             Await Your Exploration with <br />
             <span className="text-white">Tailored Tours & Packages</span>
           </h1>
+
+
+          
         </div>
       </div>
     </div>
