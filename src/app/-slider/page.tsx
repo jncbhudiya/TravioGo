@@ -4,6 +4,7 @@ import Navbar from "./-navbar/page";
 import Trendingdestinations from "./-trendingdestinations/page";
 import Searchpanel from "./-searchpanel/page";
 import Footer from "./-footer/page";
+import Populartour from "./-populartour/page";
 import Blog from "./-blog/page";
 
 function Slider() {
@@ -13,6 +14,7 @@ function Slider() {
       <Searchpanel />
       <Trendingdestinations />
       <Blog />
+      {/* <Populartour /> */}
       <Footer />
     </div>
   );

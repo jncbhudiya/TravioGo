@@ -1,8 +1,7 @@
 "use client";
 
-
 import { LeftArrow, RightArrow } from "@/app/icon/page";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const trending = [
   { city: "Tokyo", image: "/images/tokyo.png" },
@@ -11,25 +10,47 @@ const trending = [
   { city: "Italy", image: "/images/italy.png" },
   { city: "New York", image: "/images/newyork.png" },
   { city: "India", image: "/images/india.png" },
+  { city: "India", image: "/images/temple.jpg" },
+  { city: "India", image: "/images/templefront.jpg" },
+  { city: "India", image: "/images/lakeview.jpg" },
+  
+
 ];
 
 export default function Trendingdestinations() {
-   
-
+   const scrollRef = useRef<HTMLDivElement>(null);
+  
+    const scrollLeft = () => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+      }
+    };
+  
+    const scrollRight = () => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+      }
+    };
   return (
     <div className="bg-[#FCF5EF] py-16 px-6 md:px-54 mt-400px p-10">
       <div className="text-left mb-12">
-        <div className="flex gap-185">
+        <div className="flex  justify-between">
           <h2 className="text-[40px] leading-[48px] font-bold text-black font-[Ubuntu]">
             Trending Destinations
           </h2>
           <div className="flex gap-[16px]">
-            <div className="w-[50px] h-[50px] rounded-full border border-black flex items-center justify-center">
+            <button
+              onClick={scrollLeft}
+              className="w-[50px] h-[50px] rounded-full border border-black flex items-center justify-center"
+            >
               <LeftArrow />
-            </div>
-            <div className="w-[50px] h-[50px] bg-black rounded-full border border-black  flex items-center justify-center">
+            </button>
+            <button
+              onClick={scrollRight}
+              className="w-[50px] h-[50px] bg-black rounded-full border border-black flex items-center justify-center"
+            >
               <RightArrow />
-            </div>
+            </button>
           </div>
         </div>
         <p className="text-[16px] leading-[24px] font-medium text-black font-[Ubuntu] max-w-2xl mt-2">
@@ -39,7 +60,7 @@ export default function Trendingdestinations() {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-10">
+      <div  ref={scrollRef}  className=" h-[300px] flex overflow-x-auto no-scrollbar space-x-10 gap-[35px]">
         {trending.map((item) => (
           <div
             key={item.city}
@@ -58,10 +79,6 @@ export default function Trendingdestinations() {
           </div>
         ))}
       </div>
-      
-
-
-
     </div>
   );
 }
