@@ -10,48 +10,48 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#1C1C1E] text-white text-sm">
-      <div className="max-w-screen-xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-10">
-        {/* Logo & Description */}
-        <div className="space-y-6">
+      <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-4 ">
+        <div className="space-y-6 w-[400px] max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
           <div className="flex items-center gap-2">
             <img
               src="images/Logo.png"
               alt="Travel Logo"
-              className="h-10 w-auto"
+              className="h-10 w-auto rounded-full"
             />
           </div>
-          <p className="text-white/80  w-[420px] h-[96px] size-[16px] font-medium">
-            We’re passionate travel experts dedicated to curating unforgettable
-            journeys. With years of experience, we’ve perfected the art of
-            crafting tailor-made itineraries that cater to every traveller’s
-            dream.
-          </p>
-          
-          <div className="flex gap-4">
-            <div className="bg-[#FFFFFF1F] h-[40px]  p-[8px] rounded-lg  w-[40px] justify-center">
-              <FaceBookIcon />
-            </div>
 
-            <div className="bg-[#FFFFFF1F] h-[40px]  p-[8px] rounded-lg  w-[40px] justify-center">
+          <div className="max-w-[480px]">
+            <p className="text-white/80 text-base font-medium leading-relaxed">
+              We’re passionate travel experts dedicated to curating
+              unforgettable journeys. With years of experience, we’ve perfected
+              the art of crafting tailor-made itineraries that cater to every
+              traveller’s dream.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+            <FaceBookIcon  />
+          </div>
+
+            <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
               <InstragramIcon />
             </div>
-            <div className="bg-[#FFFFFF1F] h-[40px]   p-[8px] rounded-lg  w-[40px] justify-center">
-              {" "}
+            <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+             
               <LinkedinIcon />
             </div>
-            <div className="bg-[#FFFFFF1F] h-[40px]   p-[8px] rounded-lg  w-[40px] justify-center">
-              {" "}
+             <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
               <PinterestIcon />
             </div>
-            <div className="bg-[#FFFFFF1F] h-[40px]   p-[8px] rounded-lg  w-[40px] justify-center">
+            <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
               <PinterestIcon />
             </div>
           </div>
         </div>
 
         {/* About Company */}
-        <div>
-          <h4 className="font-semibold text-white mb-6">About Company</h4>
+        <div className="pl-[169px]">
+          <h4 className="font-semibold text-white mb-6 ">About Company</h4>
           <ul className="space-y-4 text-white/80">
             <li>
               <Link href="#">About Us</Link>
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         {/* Support */}
-        <div>
+        <div className="pl-[70px]">
           <h4 className="font-semibold text-white mb-6">Support</h4>
           <ul className="space-y-4 text-white/80">
             <li>

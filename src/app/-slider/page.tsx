@@ -4,6 +4,7 @@ import Navbar from "./-navbar/page";
 import Trendingdestinations from "./-trendingdestinations/page";
 import Searchpanel from "./-searchpanel/page";
 import Footer from "./-footer/page";
+import Blog from "./-blog/page";
 
 function Slider() {
   return (
@@ -11,6 +12,7 @@ function Slider() {
       <Navbar />
       <Searchpanel />
       <Trendingdestinations />
+      <Blog />
       <Footer />
     </div>
   );
