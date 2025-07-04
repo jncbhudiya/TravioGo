@@ -1,7 +1,5 @@
-import Calender from "@/app/icon/-calender/page";
-import Face from "@/app/icon/-face/page";
-import Search from "@/app/icon/-search/page";
-import World from "@/app/icon/-world/page";
+
+import { Calender, FaceIcon, SearchIcon, WorldIcon } from "@/app/icon/page";
 import React from "react";
 
 function Searchpanel() {
@@ -10,7 +8,7 @@ function Searchpanel() {
       <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center justify-center gap-2 px-4 py-3 w-full max-w-[820px]">
         <div className="flex items-center gap-2 px-4  w-full sm:w-auto">
           <div className="w-[50px] h-[50px] rounded-full border border-[#D8E0E6] flex items-center justify-center">
-            <World />
+            <WorldIcon />
           </div>
           <div className="flex flex-col w-[120px] gap-1">
             <p className="text-xs font-bold">Where</p>
@@ -38,7 +36,7 @@ function Searchpanel() {
 
         <div className="flex items-center gap-2 px-4 py-2 w-full sm:w-auto">
           <div className="w-[50px] h-[50px] rounded-full border border-[#D8E0E6] flex items-center justify-center">
-            <Face />
+            <FaceIcon />
           </div>
           <div className="flex flex-col w-[120px] gap-1">
             <p className="text-xs font-bold">Tour Type</p>
@@ -51,7 +49,7 @@ function Searchpanel() {
         </div>
 
         <button className="flex items-center gap-1 bg-[#EC9105] text-white text-sm font-medium rounded-full w-[119px] h-[46px] px-4 py-2">
-          <Search /> Search
+          <SearchIcon /> Search
         </button>
       </div>
     </div>

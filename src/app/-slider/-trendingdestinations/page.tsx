@@ -1,7 +1,7 @@
 "use client";
 
-import Leftarrow from "@/app/icon/-leftarrow/page";
-import Rightarrow from "@/app/icon/-rightarrow/page";
+
+import { LeftArrow, RightArrow } from "@/app/icon/page";
 import React, { useEffect, useState } from "react";
 
 const trending = [
@@ -14,16 +14,7 @@ const trending = [
 ];
 
 export default function Trendingdestinations() {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) =>
-        prevIndex === trending.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
+   
 
   return (
     <div className="bg-[#FCF5EF] py-16 px-6 md:px-54 mt-400px p-10">
@@ -34,10 +25,10 @@ export default function Trendingdestinations() {
           </h2>
           <div className="flex gap-[16px]">
             <div className="w-[50px] h-[50px] rounded-full border border-black flex items-center justify-center">
-              <Leftarrow />
+              <LeftArrow />
             </div>
-            <div className="w-[50px] h-[50px] rounded-full border border-black  flex items-center justify-center">
-              <Rightarrow />
+            <div className="w-[50px] h-[50px] bg-black rounded-full border border-black  flex items-center justify-center">
+              <RightArrow />
             </div>
           </div>
         </div>
@@ -67,6 +58,10 @@ export default function Trendingdestinations() {
           </div>
         ))}
       </div>
+      
+
+
+
     </div>
   );
 }

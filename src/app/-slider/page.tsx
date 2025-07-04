@@ -3,15 +3,15 @@ import React from "react";
 import Navbar from "./-navbar/page";
 import Trendingdestinations from "./-trendingdestinations/page";
 import Searchpanel from "./-searchpanel/page";
-import Leftarrow from "../icon/-leftarrow/page";
+import Footer from "./-footer/page";
 
 function Slider() {
   return (
-    <div className="w-full h-[900px] md:h-[900px] sm:h-[700px] relative overflow-auto">
+    <div className="w-full h-[900px] md:h-[900px] sm:h-[700px] relative ">
       <Navbar />
       <Searchpanel />
       <Trendingdestinations />
-    
+      <Footer />
     </div>
   );
 }
