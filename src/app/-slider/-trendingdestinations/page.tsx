@@ -32,7 +32,7 @@ export default function Trendingdestinations() {
       }
     };
   return (
-    <div className="bg-[#FCF5EF] py-16 px-6 md:px-54 mt-400px p-10">
+    <div className="bg-[#FEF5E6] py-16 px-6 md:px-54 mt-400px p-10">
       <div className="text-left mb-12">
         <div className="flex  justify-between">
           <h2 className="text-[40px] leading-[48px] font-bold text-black font-[Ubuntu]">

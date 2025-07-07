@@ -50,6 +50,26 @@ export const Calender = () => (
   </svg>
 );
 
+export const CalenderWhiteIcon = () => (
+  <svg
+    className="w-6 h-6 text-gray-800 dark:text-white"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+    />
+  </svg>
+);
+
 export const CloseIcon = () => (
   <svg
     className="w-8 h-8"
@@ -70,6 +90,25 @@ export const CloseIcon = () => (
 export const FaceIcon = () => (
   <svg
     className="w-6 h-6 text-gray-800 dark:text-black"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M15 9h.01M8.99 9H9m12 3a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM6.6 13a5.5 5.5 0 0 0 10.81 0H6.6Z"
+    />
+  </svg>
+);
+export const FaceWhiteIcon = () => (
+  <svg
+    className="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -272,6 +311,25 @@ export const WorldIcon = () => (
   </svg>
 );
 
+export const WorldWhiteIcon = () => (
+  <svg
+    className="w-6 h-6 text-white"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {/* Globe Circle */}
+    <circle cx="12" cy="12" r="9" />
+
+    {/* Orbit Ring (diagonal ellipse path) */}
+    <path d="M4.5 19.5c2-4 7-10 15-15" />
+  </svg>
+);
+
 export const HamburgerIocn = () => (
   <svg
     className="w-8 h-8"
@@ -434,5 +492,65 @@ export const PlusCircleIcon = () => (
     <circle cx="12" cy="12" r="10" />
     <line x1="12" y1="8" x2="12" y2="16" />
     <line x1="8" y1="12" x2="16" y2="12" />
+  </svg>
+);
+
+export const SearchPinkIcon = () => (
+  <svg
+    className="w-6 h-6 sm:w-7 sm:h-7 text-pink-600"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    ></path>
+  </svg>
+);
+
+export const LoactionIcon = () => (
+  <svg
+    className="w-4 h-4 text-orange-500"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+    ></path>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+    ></path>
+  </svg>
+);
+
+export const StarIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-star"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
   </svg>
 );
