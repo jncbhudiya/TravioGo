@@ -75,27 +75,30 @@ function Step() {
               alt="Woman with luggage"
               className="w-[645px] h-[489px] top-[60px] rounded-3xl shadow-2xl object-cover"
             />
-
-            <div className="absolute border-15 -top-10 w-48 h-32 sm:w-64 sm:h-40 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+            <div className="absolute bg-white border-15 -top-10 w-48 h-32 sm:w-64 sm:h-40 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
               <img
                 src="images/hillstep.jpg"
                 alt="Mountains"
                 className="w-full h-full object-cover rounded-3xl"
               />
             </div>
+            {/* Country Card */}
 
-            <div className="absolute flex-col -bottom-10 left-6 top-[330px] bg-white gap-[12px] p-[12px] rounded-2xl w-[140px] h-[140px] flex items-center space-x-2 transform ">
-              <div className="w-[48px] h-[48px] p-[12px] bg-orange-100 rounded-full flex items-center justify-center">
+            <div className=" absolute w-[140px] h-[140px] bg-white left-6 top-[330px] rounded-2xl p-4 flex flex-col items-center justify-center shadow-md">
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-3">
                 <LoactionIcon />
               </div>
-              <div>
-                <p className="text-xl items-center justify-center font-bold text-gray-900">72+</p>
-                <p className="text-sm text-gray-600">Countries</p>
-              </div>
+              <p className="text-2xl font-bold text-gray-900">72+</p>
+              <p className="text-sm text-gray-500">Countries</p>
             </div>
           </div>
         </div>
+
+        
       </div>
+
+    
+
     </>
   );
 }

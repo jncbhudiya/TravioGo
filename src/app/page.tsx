@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Slider from "./-slider/page";
+import Homepage from "./-home/page";
 
 export default function Home() {
   return (
     <div>
-    <Slider />
+      <Homepage />
     </div>
   );
 }

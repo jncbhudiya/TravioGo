@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Navbar from "./-navbar/page";
 import Trendingdestinations from "./-trendingdestinations/page";
 import Searchpanel from "./-searchpanel/page";
 import Footer from "./-footer/page";
@@ -9,11 +8,12 @@ import Blog from "./-blog/page";
 import Step from "./-step/page";
 import Topdestination from "./-topdestination/page";
 import Testmonials from "./-testimonials/page";
+import Slider from "./-slider/page";
 
-function Slider() {
+function Homepage() {
   return (
     <div className="w-full min-h-screen h-[900px] md:h-[900px] sm:h-[700px] relative ">
-      <Navbar />
+      <Slider />
       {/* <Searchpanel /> */}
       <Trendingdestinations />
       <Step />
@@ -27,4 +27,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default Homepage;
