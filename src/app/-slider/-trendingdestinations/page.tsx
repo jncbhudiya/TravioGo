@@ -10,9 +10,9 @@ const trending = [
   { city: "Italy", image: "/images/italy.png" },
   { city: "New York", image: "/images/newyork.png" },
   { city: "India", image: "/images/india.png" },
-  { city: "India", image: "/images/temple.jpg" },
-  { city: "India", image: "/images/templefront.jpg" },
-  { city: "India", image: "/images/lakeview.jpg" },
+  { city: "Japan", image: "/images/temple.jpg" },
+  { city: "England", image: "/images/templefront.jpg" },
+  { city: "China", image: "/images/lakeview.jpg" },
   
 
 ];

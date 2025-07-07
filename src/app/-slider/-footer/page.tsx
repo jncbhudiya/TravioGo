@@ -9,8 +9,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1C1C1E] text-white text-sm">
-      <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-4 ">
+   <footer className="bg-[#1C1C1E] text-white text-sm  font-inter">
+      <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        {/* Company Info */}
         <div className="space-y-6 w-[400px] max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
           <div className="flex items-center gap-2">
             <img
@@ -30,17 +31,16 @@ export default function Footer() {
           </div>
           <div className="flex gap-4">
             <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
-            <FaceBookIcon  />
-          </div>
+              <FaceBookIcon />
+            </div>
 
             <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
               <InstragramIcon />
             </div>
             <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
-             
               <LinkedinIcon />
             </div>
-             <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+            <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
               <PinterestIcon />
             </div>
             <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         {/* About Company */}
-        <div className="pl-[169px]">
+        <div className="pl-4 sm:pl-22 md:pl-16 lg:pl-[169px]">
           <h4 className="font-semibold text-white mb-6 ">About Company</h4>
           <ul className="space-y-4 text-white/80">
             <li>
@@ -69,9 +69,9 @@ export default function Footer() {
         </div>
 
         {/* Support */}
-        <div className="pl-[70px]">
+        <div className=" pl-4 sm:pl-10 md:pl-16 lg:pl-[70px]">
           <h4 className="font-semibold text-white mb-6">Support</h4>
-          <ul className="space-y-4 text-white/80">
+          <ul className="space-y-4 text-white/80 ">
             <li>
               <Link href="#">Get in touch</Link>
             </li>
@@ -101,7 +101,8 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="bg-[#EC9105] p-3 rounded-r-md  transition"
+              className="bg-[#EC9105] p-3 rounded-r-md  transition 
+              bg-[#EC9105] p-3 rounded-r-md flex items-center justify-center transition hover:opacity-90"
               aria-label="Subscribe"
             >
               <SendIcon />
@@ -114,12 +115,18 @@ export default function Footer() {
       <div className="border-t border-white/10"></div>
 
       {/* Bottom Footer */}
-      <div className="max-w-screen-xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-white/80 text-sm">
-        <p>Copyright © Travel 2024. All Rights Reserved</p>
+      <div className="max-w-screen-xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-white/80 text-sm items-center">
+        <p className="text-center md:text-left mb-2 md:mb-0">
+          Copyright © Travel 2024. All Rights Reserved
+        </p>
         <div className="flex gap-4 mt-2 md:mt-0">
-          <Link href="#">Terms of use</Link>
+          <Link href="#" className="hover:text-white transition-colors">
+            Terms of use
+          </Link>
           <span>|</span>
-          <Link href="#">Privacy Policies</Link>
+          <Link href="#" className="hover:text-white transition-colors">
+            Privacy Policies
+          </Link>
         </div>
       </div>
     </footer>
