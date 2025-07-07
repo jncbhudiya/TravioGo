@@ -12,7 +12,7 @@ import Testmonials from "./-testimonials/page";
 
 function Slider() {
   return (
-    <div className="w-full h-[900px] md:h-[900px] sm:h-[700px] relative ">
+    <div className="w-full min-h-screen h-[900px] md:h-[900px] sm:h-[700px] relative ">
       <Navbar />
       {/* <Searchpanel /> */}
       <Trendingdestinations />

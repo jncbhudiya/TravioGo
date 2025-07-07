@@ -6,8 +6,8 @@ import { destinations } from "./topdestination";
 
 export default function TopDestinations() {
   return (
-    <section className="w-full  bg-white  py-16 px-6 md:px-54 mt-400px p-10 flex flex-col gap-10">
-      <div className="max-w-[1320px] mx-auto text-center space-y-4">
+    <section className="w-full bg-white py-16 px-6 md:px-10 lg:px-24 "> 
+      <div className="max-w-[1320px] mx-auto text-center space-y-4 mb-10"> 
         <h2 className="text-4xl text-[#2D2C2F] font-bold font-ubuntu">
           Top Destination
         </h2>
@@ -17,35 +17,43 @@ export default function TopDestinations() {
           Louvre's masterpieces, and indulge in world-class cuisine.
         </p>
       </div>
-      <div className="flex pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide gap-8">
-        <div className=" flex flex-col gap-6">
-          <div className="top-[152px] left-0 w-[307px] h-[307px]">
+      <div className="flex flex-wrap lg:flex-nowrap pb-6 gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto">
+      
+        <div className="flex flex-col gap-6 w-full sm:w-[calc(50%-12px)] lg:w-[calc(24%-16px)]">
+          <div className="w-full h-[307px] aspect-square"> 
             <DestinationCard {...destinations[0]} />
           </div>
-          <div className="top-[489px] left-0 w-[307px] h-[307px]">
+          <div className="w-full h-[307px] aspect-square"> 
             <DestinationCard {...destinations[1]} />
           </div>
         </div>
-        <div className="top-[152px] left-[337px] w-[420px] h-[644px]">
-          <DestinationCard {...destinations[2]} />
+
+
+        <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33%-16px)]"> 
+          <div className="h-[644px] w-full  aspect-[420/644]"> 
+            <DestinationCard {...destinations[2]} />
+          </div>
         </div>
-        <div className="flex flex-col gap-6">
-          <div className=" top-[152px] left-[787px] w-[533px] h-[307px]">
+
+        
+        <div className="flex flex-col gap-6 w-full lg:w-[calc(42%-16px)]"> 
+          <div className="w-full  h-[307px]  aspect-[533/307]"> 
             <DestinationCard {...destinations[3]} />
           </div>
-          <div className="flex gap-6">
-            <div className=" top-[489px] left-[787px] w-[226px] h-[307px]">
+
+          <div className="flex gap-6 w-full ">
+            <div className="w-full h-[307px] aspect-[226/307]"> 
               <DestinationCard {...destinations[4]} />
             </div>
-
-            <div className=" top-[489px] left-[1043px] w-[277px] h-[307px]">
+            <div className="w-1/2 aspect-[277/307] w-[277px] h-[307px]"> 
               <DestinationCard {...destinations[5]} />
             </div>
           </div>
         </div>
+
       </div>
-      <div className=" flex justify-center">
-        <button className="bg-[#EC9105] text-white px-6 py-2 rounded-full text-sm font-medium  transition">
+      <div className="mt-10 flex justify-center">
+        <button className="bg-[#EC9105] text-white px-6 py-2 rounded-full text-sm font-medium transition hover:bg-[#d47b04]">
           All Destination →
         </button>
       </div>

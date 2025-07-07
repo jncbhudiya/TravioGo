@@ -63,7 +63,7 @@ function Populartour() {
         {/* Blog Posts Grid */}
         <div
           ref={scrollRef}
-          className="flex  pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide gap-8"
+          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar gap-6 pb-4"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {tourPackages.map((pkg) => (
