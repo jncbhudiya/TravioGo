@@ -12,18 +12,19 @@ import Slider from "./-slider/page";
 
 function Homepage() {
   return (
-    <div className="w-full min-h-screen h-[900px] md:h-[900px] sm:h-[700px] relative ">
-      <Slider />
-      {/* <Searchpanel /> */}
-      <Trendingdestinations />
-      <Step />
-      <Populartour />
-      <Topdestination />
-      <Testmonials />
-      <Blog />
-
-      <Footer />
-    </div>
+    <>
+      <div className="w-full min-h-screen h-[900px] md:h-[900px] sm:h-[700px] relative ">
+        <Slider />
+        {/* <Searchpanel /> */}
+        <Trendingdestinations />
+        <Step />
+        <Populartour />
+        <Topdestination />
+        <Testmonials />
+        <Blog />
+        <Footer />
+      </div>
+    </>
   );
 }
 
