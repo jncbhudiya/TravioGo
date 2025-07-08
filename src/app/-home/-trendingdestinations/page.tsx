@@ -1,6 +1,11 @@
 "use client";
 
-import { LeftArrow, RightArrow } from "@/app/icon/page";
+import {
+  BlackCrossRightArrow,
+  LeftArrow,
+  RightArrow,
+  RightBlackSmallArrow,
+} from "@/app/icon/page";
 import React, { useEffect, useRef, useState } from "react";
 
 const trending = [
@@ -66,14 +71,20 @@ export default function Trendingdestinations() {
           {trending.map((item) => (
             <div
               key={item.city}
-              className="w-[180px] h-[300px] flex flex-col items-center gap-4"
+              className="w-[180px] h-[300px] flex flex-col items-center gap-4 group"
             >
-              <div className="w-[180px] h-[260px] rounded-[8100px] overflow-hidden shadow-md">
+              <div className="w-[180px] h-[260px] rounded-[8100px] overflow-hidden shadow-md relative">
                 <img
                   src={item.image}
                   alt={item.city}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition duration-300 group-hover:brightness-50"
                 />
+
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100  transition duration-300">
+                  <div className="w-10 h-10 rounded-full border-1 bg-opacity-80 flex items-center justify-center">
+                    <BlackCrossRightArrow />
+                  </div>
+                </div>
               </div>
               <p className="text-center font-bold text-[20px] leading-[24px] text-black">
                 {item.city}
