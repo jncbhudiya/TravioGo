@@ -1,5 +1,13 @@
 "use client";
-import { CloseIcon, HamburgerIocn } from "@/app/icon/page";
+import {
+  AboutIcon,
+  CloseIcon,
+  ContactUsIcon,
+  DestinationsIcon,
+  HamburgerIocn,
+  HomeIcon,
+  ToursIcon,
+} from "@/app/icon/page";
 import React, { useState } from "react";
 
 function Header() {
@@ -60,68 +68,74 @@ function Header() {
 
           {/* Mobile Menu Overlay  */}
           {isMenuOpen && (
-            <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center md:hidden">
-              <button
+            <div className="fixed inset-y-0 right-0 z-50 w-[280px] bg-white p-6 shadow-lg md:hidden animate-slide-in-right">
+              <div
+                className="flex-1 bg-black bg-opacity-50"
                 onClick={toggleMenu}
-                className="absolute top-6 right-4 text-gray-800 focus:outline-none"
-              >
-                <CloseIcon />
-              </button>
+              />
 
-              {/* Mobile Navigation Links */}
-              <ul className="flex flex-col gap-6 text-xl font-medium mb-8">
-                <li
-                  className="text-[#EC9105] cursor-pointer hover:text-gray-900 transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  Home
-                </li>
-                <li
-                  className="cursor-pointer text-[#EC9105] hover:text-[#EC9105] transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  About Us
-                </li>
-                <li
-                  className="cursor-pointer text-[#EC9105] hover:text-[#EC9105] transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  Destinations
-                </li>
-                <li
-                  className="cursor-pointer text-[#EC9105] hover:text-[#EC9105] transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  Tours
-                </li>
-                <li
-                  className="cursor-pointer text-[#EC9105] hover:text-[#EC9105] transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  Contact Us
-                </li>
-              </ul>
-
-              {/* Mobile Buttons */}
-              <div className="flex flex-col text-[#EC9105]  gap-4 text-lg">
-                <span
-                  className="cursor-pointer hover:text-[#EC9105] transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  USD
-                </span>
-                <span
-                  className="cursor-pointer hover:text-[#EC9105] transition-colors duration-200"
-                  onClick={toggleMenu}
-                >
-                  Sign Up
-                </span>
+              <div className="w-[280px] bg-white h-full p-6 shadow-lg flex flex-col justify-between animate-slide-in-right">
                 <button
-                  className="bg-[#EC9105] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#d47f04] transition-colors duration-200"
                   onClick={toggleMenu}
+                  className="absolute top-4 right-4 text-gray-600 hover:text-black transition duration-200"
                 >
-                  Log in
+                  <CloseIcon />
                 </button>
+
+                <ul className="flex flex-col gap-15  text-lg font-medium text-[#EC9105] mt-12">
+                  {[
+                    {
+                      label: "Home",
+                      icon: <HomeIcon />,
+                    },
+                    {
+                      label: "About Us",
+                      icon: <AboutIcon />,
+                    },
+                    {
+                      label: "Destinations",
+                      icon: <DestinationsIcon />,
+                    },
+                    {
+                      label: "Tours",
+                      icon: <ToursIcon />,
+                    },
+                    {
+                      label: "Contact Us",
+                      icon: <ContactUsIcon />,
+                    },
+                  ].map(({ label, icon }) => (
+                    <li
+                      key={label}
+                      onClick={toggleMenu}
+                      className="cursor-pointer hover:text-gray-800 gap-6 flex items-center transition duration-200"
+                    >
+                      {icon}
+                      {label}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-col gap-4 text-[#EC9105] text-base mt-10">
+                  <span
+                    className="cursor-pointer hover:text-gray-800"
+                    onClick={toggleMenu}
+                  >
+                    USD
+                  </span>
+                  <span
+                    className="cursor-pointer hover:text-gray-800"
+                    onClick={toggleMenu}
+                  >
+                    Sign Up
+                  </span>
+                  <button
+                    className="bg-[#EC9105] text-white px-4 py-2 rounded-full shadow hover:bg-[#d47f04]"
+                    onClick={toggleMenu}
+                  >
+                    Log in
+                  </button>
+                </div>
               </div>
             </div>
           )}
