@@ -4,7 +4,7 @@ import React from "react";
 function Searchpanel() {
   return (
     <>
-      <div className="absolute top-[950] w-[824px] h-[82px] left-[452px]  flex justify-center px-4 ">
+      <div className="absolute top-[850] w-[824px] h-[82px] left-[452px]  flex justify-center px-4 ">
         <div className="bg-white text-black rounded-lg md:rounded-full shadow-lg flex flex-col sm:flex-wrap lg:flex-nowrap sm:flex-row items-center justify-center gap-4 px-4 py-5 w-full max-w-[820px]">
           {/* Where */}
           <div className="flex items-center gap-3 w-full sm:w-auto px-2">

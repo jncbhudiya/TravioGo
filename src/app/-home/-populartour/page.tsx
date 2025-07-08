@@ -9,6 +9,7 @@ import {
   PlaneIcon,
   RightBlackArrow,
   RightBlackSmallArrow,
+  StarIcon,
 } from "@/app/icon/page";
 import React, { useRef } from "react";
 import { tourPackages } from "./tourPackages";
@@ -69,11 +70,10 @@ function Populartour() {
           {tourPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="flex-none w-[420px] p-[16px] bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+              className="flex-none w-[420px] p-[16px] bg-white rounded-4xl  transition-shadow duration-300 overflow-hidden"
               style={{ scrollSnapAlign: "start" }}
             >
-            
-              <div className="relative w-full h-[295px]">
+              <div className="relative w-full h-[295px] gap-[10px]">
                 <img
                   src={pkg.image}
                   alt={pkg.title}
@@ -84,19 +84,18 @@ function Populartour() {
                 </button>
               </div>
 
-              <div className="p-4">
-                {" "}
+              <div className="p-4 w-full  gap-[12px]">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-xl font-semibold text-gray-900 leading-tight">
                     {pkg.title}
                   </h3>
                   <div className="flex items-center text-gray-700 text-sm font-medium">
-                    {pkg.rating}
+                    <StarIcon />{pkg.rating}
                   </div>
                 </div>
                 <p className="text-gray-500 text-sm mb-4">{pkg.duration}</p>
                 <hr className="border-t border-gray-200 mb-4" />
-                <div className="grid grid-cols-4 gap-y-3 gap-x-2 text-gray-700 text-sm mb-5">
+                <div className="grid grid-cols-4 gap-y-3 gap-x-2 text-gray-700 text-sm ">
                   <div className="flex flex-col items-center text-center">
                     <PlaneIcon />
                     <span className="text-xs">{pkg.flights} Flights</span>
@@ -114,18 +113,19 @@ function Populartour() {
                     <span className="text-xs">{pkg.activities} Activities</span>
                   </div>
                 </div>
-                <div className="flex justify-between items-center pt-4 border-t border-gray-200">
+                
+              </div>
+              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
                   <p className="text-gray-900 text-xl font-bold font-ubuntu">
                     {pkg.price}{" "}
                     <span className="text-sm font-normal text-gray-500 font-inter">
                       /Per person
                     </span>
                   </p>
-                  <button className=" h-[24px] w-[24px]  rounded-full text-[#5C788C] border-1 border-[#5C788C] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                  <button className=" h-[24px] w-[24px]  rounded-full text-[#5C788C] border-1 border-[#5C788C] focus:outline-none transition-colors">
                     <RightBlackSmallArrow />
                   </button>
                 </div>
-              </div>
             </div>
           ))}
         </div>

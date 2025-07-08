@@ -386,21 +386,29 @@ export const PlaneIcon = () => (
 
 export const HotelIcon = () => (
   <svg
-    className="text-[#EC9105]"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
     width="24"
     height="24"
+    viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-buildings text-[#EC9105]"
   >
-    <path d="M2 20h20v-2H2v2zm2-4h16V8H4v8zm-2-6h20V4H2v6z" />
-    <line x1="12" y1="12" x2="12" y2="16" />
-    <line x1="8" y1="12" x2="8" y2="16" />
-    <line x1="16" y1="12" x2="16" y2="16" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M4 21v-15c0 -1 1 -2 2 -2h5c1 0 2 1 2 2v15" />
+    <path d="M16 8h2c1 0 2 1 2 2v11" />
+    <path d="M3 21h18" />
+    <path d="M10 12v0" />
+    <path d="M10 16v0" />
+    <path d="M10 8v0" />
+    <path d="M7 12v0" />
+    <path d="M7 16v0" />
+    <path d="M7 8v0" />
+    <path d="M17 12v0" />
+    <path d="M17 16v0" />
   </svg>
 );
 
@@ -426,18 +434,22 @@ export const CarIcon = () => (
 
 export const ActivityIcon = () => (
   <svg
-    className="text-[#EC9105]"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
     width="24"
     height="24"
+    viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-bike text-[#EC9105]"
   >
-    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M5 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    <path d="M19 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    <path d="M12 19l0 -4l-3 -3l5 -4l2 3l3 0" />
+    <path d="M17 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
   </svg>
 );
 
@@ -573,7 +585,7 @@ export const StarIcon = () => (
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-star"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-star text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
