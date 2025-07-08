@@ -313,39 +313,39 @@ export const SearchIcon = () => (
 
 export const WorldIcon = () => (
   <svg
-    className="w-6 h-6 text-[#1F2B3D]"
     xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-planet"
   >
-    {/* Globe Circle */}
-    <circle cx="12" cy="12" r="9" />
-
-    {/* Orbit Ring (diagonal ellipse path) */}
-    <path d="M4.5 19.5c2-4 7-10 15-15" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+    <path d="M12 12m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
   </svg>
 );
 
 export const WorldWhiteIcon = () => (
   <svg
-    className="w-6 h-6 text-white"
     xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-planet"
   >
-    {/* Globe Circle */}
-    <circle cx="12" cy="12" r="9" />
-
-    {/* Orbit Ring (diagonal ellipse path) */}
-    <path d="M4.5 19.5c2-4 7-10 15-15" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+    <path d="M12 12m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
   </svg>
 );
 
@@ -369,13 +369,18 @@ export const HamburgerIocn = () => (
 export const PlaneIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    fill="currentColor"
-    className="bi bi-airplane-fill text-[#EC9105]"
-    viewBox="0 0 16 16"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-plane-tilt text-[#EC9105]"
   >
-    <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M14.5 6.5l3 -2.9a2.05 2.05 0 0 1 2.9 2.9l-2.9 3l2.5 7.5l-2.5 2.55l-3.5 -6.55l-3 3v3l-2 2l-1.5 -4.5l-4.5 -1.5l2 -2h3l3 -3l-6.5 -3.5l2.5 -2.5l7.5 2.5z" />
   </svg>
 );
 
@@ -401,20 +406,21 @@ export const HotelIcon = () => (
 
 export const CarIcon = () => (
   <svg
-    className="text-[#EC9105]"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
     width="24"
     height="24"
+    viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-car text-[#EC9105]"
   >
-    <path d="M10 20.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5zM17.25 20.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z" />
-    <path d="M14.5 16.5H9.75M2.25 16.5h7.5L12 9.75h9.75l-2.25 6.75h-7.5l-2.25-6.75H2.25z" />
-    <path d="M6.75 16.5L4.5 10.5M19.5 16.5L21.75 10.5" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
   </svg>
 );
 
@@ -594,18 +600,11 @@ export const AboutIcon = () => (
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-users"
+    fill="currentColor"
+    className="icon icon-tabler icons-tabler-filled icon-tabler-info-circle"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+    <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" />
   </svg>
 );
 

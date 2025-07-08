@@ -30,7 +30,7 @@ function Header() {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-white focus:outline-none"
+              className="text-[#EC9105]  focus:outline-none"
             >
               <HamburgerIocn />
             </button>
@@ -77,7 +77,7 @@ function Header() {
               <div className="w-[280px] bg-white h-full p-6 shadow-lg flex flex-col justify-between animate-slide-in-right">
                 <button
                   onClick={toggleMenu}
-                  className="absolute top-4 right-4 text-gray-600 hover:text-black transition duration-200"
+                  className="absolute top-4 right-4 text-[#EC9105]  hover:text-black transition duration-200"
                 >
                   <CloseIcon />
                 </button>
