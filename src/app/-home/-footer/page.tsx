@@ -10,10 +10,11 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#1C1C1E] text-white text-sm  font-inter">
-        <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <footer className="bg-[#1C1C1E] text-white text-sm  font-inter ">
+        <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 ">
           {/* Company Info */}
-          <div className="space-y-6 w-[400px] max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
+
+          <div className="space-y-6 max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md">
             <div className="flex items-center gap-2">
               <img
                 src="images/Logo.png"
@@ -22,36 +23,38 @@ export default function Footer() {
               />
             </div>
 
-            <div className="max-w-[480px]">
-              <p className="text-white/80 text-base font-medium leading-relaxed">
+            <div className="max-w-full ">
+              <p className="text-white/80 text-base font-medium leading-relaxed  lg:w-[420px]">
                 We’re passionate travel experts dedicated to curating
                 unforgettable journeys. With years of experience, we’ve
                 perfected the art of crafting tailor-made itineraries that cater
-                to every traveller’s dream.
+                to every traveller’s dream. 
               </p>
             </div>
-            <div className="flex gap-4">
-              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+
+            <div className="flex gap-4  ">
+              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center">
                 <FaceBookIcon />
               </div>
 
-              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center">
                 <InstragramIcon />
               </div>
-              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center">
                 <LinkedinIcon />
               </div>
-              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center">
                 <PinterestIcon />
               </div>
-              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg  items-center justify-center">
+
+              <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center">
                 <PinterestIcon />
               </div>
             </div>
           </div>
 
           {/* About Company */}
-          <div className="pl-4 sm:pl-22 md:pl-16 lg:pl-[169px]">
+          <div className="pl-4  -md:pl-11 lg:pl-[145px]">
             <h4 className="font-semibold text-white mb-6 ">About Company</h4>
             <ul className="space-y-4 text-white/80">
               <li>
@@ -70,7 +73,7 @@ export default function Footer() {
           </div>
 
           {/* Support */}
-          <div className=" pl-4 sm:pl-10 md:pl-16 lg:pl-[70px]">
+          <div className=" pl-4  lg:pl-[70px]">
             <h4 className="font-semibold text-white mb-6">Support</h4>
             <ul className="space-y-4 text-white/80 ">
               <li>
@@ -102,8 +105,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="bg-[#EC9105] p-3 rounded-r-md  transition 
-              bg-[#EC9105] p-3 rounded-r-md flex items-center justify-center transition hover:opacity-90"
+                className="bg-[#EC9105] p-3 rounded-r-md  transition   flex items-center justify-center  hover:opacity-90"
                 aria-label="Subscribe"
               >
                 <SendIcon />

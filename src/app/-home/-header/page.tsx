@@ -20,7 +20,7 @@ function Header() {
     <>
       {" "}
       <div className="relative z-10 ">
-        <nav className="max-w-[1320px] h-[80px] mx-auto flex items-center justify-between px-4 mt-[24px] ml-[204px] relative z-50">
+        <nav className="max-w-[1320px] h-[80px] mx-auto flex items-center justify-between px-4 mt-[20px] ml-[204px] relative z-50">
           <img
             src="/images/Logo.png"
             alt="Logo"
@@ -36,8 +36,8 @@ function Header() {
             </button>
           </div>
 
-          <ul className="hidden h-[24px] w-[452px] ml-[270px] gap-[30px]  md:flex text-sm font-medium">
-            <li className="text-[#EC9105]  w-[45px] font-medium cursor-pointer  transition-colors duration-200">
+          <ul className="hidden h-[24px] w-[452px] ml-[78px] gap-[30px]  md:flex text-sm font-medium">
+            <li className=" w-[45px] font-medium cursor-pointer  hover:text-[#EC9105]  transition-colors duration-200">
               Home
             </li>
             <li className="cursor-pointer w-[69px]  font-medium hover:text-[#EC9105] transition-colors duration-200">
@@ -141,11 +141,12 @@ function Header() {
           )}
         </nav>
 
-        <div className="mt-[250px] text-base/8 leading-8 tracking-wide  items-center justify-center px-4 text-center flex flex-col gap-[24px]">
+        <div className="mt-[200px] text-base/8 leading-8 tracking-wide  items-center justify-center px-4 text-center flex flex-col gap-[24px]">
           <p className="text-lg md:text-xl font-semibold opacity-75 ">
             Seamless Booking: 15,000+ Multi-Day Adventures Await
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-wider">
+
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-widest">
             Await Your Exploration with <br />
             <span className="text-white">Tailored Tours & Packages</span>
           </h1>

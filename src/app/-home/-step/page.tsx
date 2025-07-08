@@ -15,15 +15,17 @@ function Step() {
     <>
       <div className=" bg-white flex  py-16 px-6 md:px-54 mt-400px p-10">
         {/* Left Section: Steps */}
-        <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col ">
-          <p className="text-base font-semibold text-[#464549] mb-2">
-            Hassle-Free
-          </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
-            3 Simple Steps to Your Next Adventure
-          </h1>
+        <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col w-[1320px] h-[549px]">
+         
+            <p className="text-base font-semibold w-[645px] h-[24px] text-[#464549] mb-2">
+              Hassle-Free
+            </p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
+              3 Simple Steps to Your Next Adventure
+            </h1>
 
-          <div className="flex items-start mb-8">
+
+          <div className="flex items-start mb-8 w-[645px] h-[92px]">
             <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#FF487F] rounded-full flex items-center justify-center mr-4 shadow-md">
               <WorldWhiteIcon />
             </div>
@@ -37,7 +39,7 @@ function Step() {
             </div>
           </div>
 
-          <div className="flex items-start mb-8">
+          <div className="flex items-start mb-8 w-[645px] h-[92px]">
             <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#6344FE] rounded-full flex items-center justify-center mr-4 shadow-md">
               <CalenderWhiteIcon />
             </div>
@@ -52,7 +54,7 @@ function Step() {
             </div>
           </div>
 
-          <div className="flex items-start">
+          <div className="flex items-start w-[645px] h-[92px]">
             <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#EFCB0D] rounded-full flex items-center justify-center mr-4 shadow-md">
               <FaceWhiteIcon />
             </div>
@@ -75,7 +77,7 @@ function Step() {
               alt="Woman with luggage"
               className="w-[645px] h-[489px] top-[60px] rounded-3xl shadow-2xl object-cover"
             />
-            <div className="absolute bg-white border-15 -top-10 w-48 h-32 sm:w-64 sm:h-40 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+            <div className="absolute bg-white border-15 -top-10 w-48 h-32 sm:w-64 sm:h-40 rounded-3xl overflow-hidden shadow-xl border-white">
               <img
                 src="images/hillstep.jpg"
                 alt="Mountains"
@@ -93,12 +95,7 @@ function Step() {
             </div>
           </div>
         </div>
-
-        
       </div>
-
-    
-
     </>
   );
 }
