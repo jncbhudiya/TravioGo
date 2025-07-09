@@ -243,20 +243,21 @@ export const RightBlackArrow = () => (
 );
 export const RightBlackSmallArrow = () => (
   <svg
-    className="w-6 h-6 text-gray-800 dark:text-[#5C788C] "
-    aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
-    width="16px"
-    height="16px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"
   >
-    <path
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M19 12H5m14 0-4 4m4-4-4-4"
-    />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M5 12l14 0" />
+    <path d="M15 16l4 -4" />
+    <path d="M15 8l4 4" />
   </svg>
 );
 
@@ -478,8 +479,8 @@ export const HeartIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    width="24"
-    height="24"
+    width="18"
+    height="18"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -583,15 +584,15 @@ export const LoactionIcon = () => (
 export const StarIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-star text-[#EC9105]"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-star text-[#464549]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />

@@ -67,7 +67,7 @@ export default function Trendingdestinations() {
 
         <div
           ref={scrollRef}
-          className="h-[300px] flex overflow-hidden scrollbar-hide space-x-[48px]"
+          className="h-[300px]  flex overflow-hidden scrollbar-hide space-x-[48px]"
         >
           {trending.map((item) => (
             <div
@@ -92,6 +92,8 @@ export default function Trendingdestinations() {
             </div>
           ))}
         </div>
+
+        
       </div>
     </>
   );

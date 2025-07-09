@@ -31,103 +31,115 @@ function Populartour() {
 
   return (
     <>
-      <div className=" bg-[#FEF5E6]  py-16 px-6 md:px-54 mt-400px p-10">
+      <div className="bg-[#FEF5E6] py-16 px-4 sm:px-6 lg:px-20 xl:px-[204px]">
         {/* Header Section */}
-
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 w-full">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 w-full gap-6">
           <div className="w-full md:max-w-[645px] space-y-2">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 font-ubuntu leading-snug md:leading-[48px] tracking-normal">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 font-[Ubuntu] leading-snug md:leading-[48px] tracking-normal">
               Popular Tour Packages
             </h2>
-            <p className="text-[#464549] text-sm md:text-base font-medium font-ubuntu max-w-xl">
+            <p className="text-[#464549] text-sm md:text-base font-medium leading-6 font-[Ubuntu] max-w-xl">
               Immerse yourself in diverse cultures, breathtaking landscapes, and
               unforgettable experiences. Your global adventure awaits.
             </p>
           </div>
 
-          <div className="flex space-x-4 mt-6 md:mt-0">
+          <div className="flex gap-4">
             <button
               onClick={scrollLeft}
-              className="p-3 rounded-full border border-[#202326] shadow-md focus:outline-none focus:ring-2 transition-colors"
+              className="w-[38px] h-[38px] p-2 border border-[#202326] rounded-full flex items-center justify-center shadow-md"
             >
               <LeftArrow />
             </button>
             <button
               onClick={scrollRight}
-              className="p-3 rounded-full border border-[#202326] shadow-md focus:outline-none focus:ring-2 transition-colors"
+              className="w-[38px] h-[38px] p-2 border border-[#202326] rounded-full flex items-center justify-center shadow-md"
             >
               <RightBlackArrow />
             </button>
           </div>
         </div>
 
-        {/* Blog Posts Grid */}
+        {/* Cards Scrollable Container */}
         <div
+          className="overflow-x-auto no-scrollbar scroll-smooth"
           ref={scrollRef}
-          className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar gap-6 pb-4"
-          style={{ scrollSnapType: "x mandatory" }}
         >
-          {tourPackages.map((pkg) => (
-            <div
-              key={pkg.id}
-              className="flex-none w-[420px] p-[16px] bg-white rounded-4xl  transition-shadow duration-300 overflow-hidden"
-              style={{ scrollSnapAlign: "start" }}
-            >
-              <div className="relative w-full h-[295px] gap-[10px]">
-                <img
-                  src={pkg.image}
-                  alt={pkg.title}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-                <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md text-gray-700 hover:text-red-500 hover:bg-gray-100 transition-colors">
-                  <HeartIcon />
-                </button>
-              </div>
+          <div className="flex gap-[30px] snap-x snap-mandatory w-max">
+            {tourPackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="flex-none w-[90vw] sm:w-[340px] md:w-[380px] lg:w-[420px] h-auto bg-white rounded-[30px] p-[16px] snap-start transition-shadow duration-300"
+              >
+                {/* Image */}
+                <div className="relative w-full aspect-[388/295] mb-[12px]">
+                  <img
+                    src={pkg.image}
+                    alt={pkg.title}
+                    className="w-full h-full object-cover rounded-[14px]"
+                  />
+                  <button className="absolute h-[30px] w-[30px] top-4 right-4 p-1.5 bg-white rounded-full shadow-md text-gray-700 hover:text-red-500 hover:bg-gray-100 transition-colors">
+                    <HeartIcon />
+                  </button>
+                </div>
 
-              <div className="p-4 w-full  gap-[12px]">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900 leading-tight">
-                    {pkg.title}
-                  </h3>
-                  <div className="flex items-center text-gray-700 text-sm font-medium">
-                    <StarIcon />{pkg.rating}
+                {/* Tour Info */}
+                <div className="space-y-[12px] w-full border-b  border-[#D8E0E6]     pb-4">
+                  <div className="flex justify-between items-start border-[#D8E0E6]  border-b pb-2.5 ">
+                    <div className="flex flex-col gap-[4px]">
+                      <h3 className="text-[20px] md:text-[24px] font-bold font-[Ubuntu] leading-[29px] text-gray-900">
+                        {pkg.title}
+                      </h3>
+                      <p className="text-[14px] font-[Ubuntu] font-normal leading-[17px] text-[#464549]">
+                        {pkg.duration}
+                      </p>
+                    </div>
+                    <div className="flex w-[47px] h-[24px] items-center gap-[4px] shrink-0 mt-1">
+                      <span className="w-[20px] h-[20px] flex items-center justify-center">
+                        <StarIcon />
+                      </span>
+                      <span className="font-[Ubuntu] font-medium text-[16px] leading-[24px] text-[#464549]">
+                        {pkg.rating}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Icons Info */}
+                  <div className="grid grid-cols-4 gap-y-3 text-center text-gray-700  text-[13px] sm:text-[14px] ">
+                    <div className="flex flex-col items-center gap-[8px]">
+                      <PlaneIcon />
+                      <span>{pkg.flights} Flights</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-[8px]">
+                      <HotelIcon />
+                      <span>{pkg.hotels} Hotel</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-[8px]">
+                      <CarIcon />
+                      <span>{pkg.transfers} Transfers</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-[8px]">
+                      <ActivityIcon />
+                      <span>{pkg.activities} Activities</span>
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-500 text-sm mb-4">{pkg.duration}</p>
-                <hr className="border-t border-gray-200 mb-4" />
-                <div className="grid grid-cols-4 gap-y-3 gap-x-2 text-gray-700 text-sm ">
-                  <div className="flex flex-col items-center text-center">
-                    <PlaneIcon />
-                    <span className="text-xs">{pkg.flights} Flights</span>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <HotelIcon />
-                    <span className="text-xs">{pkg.hotels} Hotel</span>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <CarIcon />
-                    <span className="text-xs">{pkg.transfers} Transfers</span>
-                  </div>
-                  <div className="flex flex-col items-center text-center">
-                    <ActivityIcon />
-                    <span className="text-xs">{pkg.activities} Activities</span>
-                  </div>
-                </div>
-                
-              </div>
-              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-                  <p className="text-gray-900 text-xl font-bold font-ubuntu">
+
+                {/* Price Section */}
+                <div className="flex justify-between items-center pt-4">
+                  <p className="text-gray-900 text-[16px] font-bold font-[Ubuntu]">
                     {pkg.price}{" "}
-                    <span className="text-sm font-normal text-gray-500 font-inter">
+                    <span className="text-sm font-normal text-gray-500 font-[Ubuntu]">
                       /Per person
                     </span>
                   </p>
-                  <button className=" h-[24px] w-[24px]  rounded-full text-[#5C788C] border-1 border-[#5C788C] focus:outline-none transition-colors">
+                  <button className="w-[24px] h-[24px] rounded-full border border-[#5C788C] text-[#5C788C] flex items-center justify-center">
                     <RightBlackSmallArrow />
                   </button>
                 </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
