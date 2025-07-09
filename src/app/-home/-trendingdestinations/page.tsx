@@ -36,9 +36,9 @@ export default function Trendingdestinations() {
   };
   return (
     <>
-      <div className="bg-[#FEF5E6] h-[653px] w-full py-16 px-4 sm:px-6 lg:px-20 xl:px-48 ">
+      <div className="bg-[#FEF5E6] h-[653px] top-[900px] w-full py-16 px-4 sm:px-6 lg:px-20 xl:px-48 ">
         <div className="mb-12">
-          <div className="flex flex-col md:flex-row justify-between gap-6 md:items-center">
+          <div className="flex flex-col top-[1021px] md:flex-row justify-between gap-6 md:items-center">
             <h2 className="text-[40px] leading-[48px] font-bold text-black font-[Ubuntu]">
               Trending Destinations
             </h2>
