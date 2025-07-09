@@ -11,10 +11,10 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-[#1C1C1E] text-white text-sm  font-inter ">
-        <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 ">
+        <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1 ml-[250px]  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 ">
           {/* Company Info */}
 
-          <div className="space-y-6 max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md">
+          <div className="space-y-6 max-w-full  lg:max-w-md">
             <div className="flex items-center gap-2">
               <img
                 src="images/Logo.png"
@@ -23,16 +23,16 @@ export default function Footer() {
               />
             </div>
 
-            <div className="max-w-full ">
+            <div className="">
               <p className="text-white/80 text-base font-medium leading-relaxed  lg:w-[420px]">
                 We’re passionate travel experts dedicated to curating
                 unforgettable journeys. With years of experience, we’ve
                 perfected the art of crafting tailor-made itineraries that cater
-                to every traveller’s dream. 
+                to every traveller’s dream.
               </p>
             </div>
 
-            <div className="flex gap-4  ">
+            <div className="flex gap-4 w-[296px] h-[40px] ">
               <div className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center">
                 <FaceBookIcon />
               </div>
@@ -92,25 +92,29 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div>
+          <div className="space-y-6 max-w-full md:max-w-sm  lg:w-[420px]">
             <h4 className="font-bold text-lg mb-4">Newsletter</h4>
             <p className="text-white/80 mb-4 leading-6">
               Receive latest news, update, and many other things every week.
             </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Enter Your email address"
-                className="w-full px-4 py-3 rounded-l-md bg-white text-black text-sm focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-[#EC9105] p-3 rounded-r-md  transition   flex items-center justify-center  hover:opacity-90"
-                aria-label="Subscribe"
-              >
-                <SendIcon />
-              </button>
-            </form>
+            <div className=" w-[420px]  h-[48px] max-w-md">
+              <form className="flex items-center border border-white rounded-md bg-[#1B1D1F]">
+                <input
+                  type="email"
+                  placeholder="Enter Your email address"
+                  className="w-full px-4 py-3 bg-[#1B1D1F] text-white text-sm placeholder-white focus:outline-none"
+                />
+                <div className="pl-1 pr-1 pb-1 pt-1">
+                  <button
+                    type="submit"
+                    className="bg-[#EC9105] p-3 flex items-center justify-center rounded-md hover:opacity-90"
+                    aria-label="Subscribe"
+                  >
+                    <SendIcon />
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -118,7 +122,7 @@ export default function Footer() {
         <div className="border-t border-white/10"></div>
 
         {/* Bottom Footer */}
-        <div className="max-w-screen-xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-white/80 text-sm items-center">
+        <div className="max-w-screen-xl mx-auto px-6 py-4  ml-[250px]  flex flex-col md:flex-row justify-between text-white/80 text-sm items-center">
           <p className="text-center md:text-left mb-2 md:mb-0">
             Copyright © Travel 2024. All Rights Reserved
           </p>
