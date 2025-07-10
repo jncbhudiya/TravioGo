@@ -8,7 +8,8 @@ import React from "react";
 
 function Step() {
   return (
-    <div className="bg-white w-full px-6 lg:px-[204px] py-16">
+    <section className="w-full bg-white py-16 px-6 md:px-10 lg:px-24 ">
+        <div className="max-w-[1320px] mx-auto  space-y-4 mb-10 ">
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-[40px]">
         {/* LEFT SECTION */}
         <div className="w-full lg:w-[645px] h-auto lg:h-[549px] flex flex-col justify-start gap-[32px]">
@@ -115,6 +116,7 @@ function Step() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
 

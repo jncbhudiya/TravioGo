@@ -31,20 +31,20 @@ function Populartour() {
 
   return (
     <>
-      <div className="bg-[#FEF5E6] py-16 px-4 sm:px-6 lg:px-20 xl:px-[204px]">
+      <div className="bg-[#FEF5E6] py-16 px-6 md:px-14 lg:px-[204px]">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 w-full gap-6">
+        <div className="flex flex-col md:flex-row w-full max-w-[1320px] mx-auto justify-between items-start md:items-end mb-10 md:mb-12 gap-6">
           <div className="w-full md:max-w-[645px] space-y-2">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 font-[Ubuntu] leading-snug md:leading-[48px] tracking-normal">
+            <h2 className="text-2xl md:text-[40px] font-bold text-[#2D2C2F] font-ubuntu leading-[48px] tracking-normal">
               Popular Tour Packages
             </h2>
-            <p className="text-[#464549] text-sm md:text-base font-medium leading-6 font-[Ubuntu] max-w-xl">
+            <p className="text-[#464549] text-sm md:text-[16px] font-medium font-ubuntu leading-[24px]">
               Immerse yourself in diverse cultures, breathtaking landscapes, and
               unforgettable experiences. Your global adventure awaits.
             </p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 mb-8 mr-2.5">
             <button
               onClick={scrollLeft}
               className="w-[38px] h-[38px] p-2 border border-[#202326] rounded-full flex items-center justify-center shadow-md"
@@ -62,7 +62,7 @@ function Populartour() {
 
         {/* Cards Scrollable Container */}
         <div
-          className="overflow-x-auto no-scrollbar scroll-smooth"
+          className="flex w-full max-w-[1320px] mx-auto h-[544px] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar gap-6 pb-4"
           ref={scrollRef}
         >
           <div className="flex gap-[30px] snap-x snap-mandatory w-max">
