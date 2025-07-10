@@ -10,15 +10,19 @@ export default function TopDestinations() {
     <>
       <section className="w-full bg-white py-16 px-6 md:px-10 lg:px-24 ">
         <div className="max-w-[1320px] mx-auto text-center space-y-4 mb-10 ">
-          <h2 className="text-4xl text-[#2D2C2F] font-bold font-ubuntu">
-            Top Destination
-          </h2>
-          <p className="text-base font-medium font-ubuntu text-[#464549] max-w-[870px] mx-auto leading-6">
-            The City of Love, where romance, art, and fashion intertwine.
-            Immerse yourself in the enchanting atmosphere of the Eiffel Tower,
-            explore the Louvre's masterpieces, and indulge in world-class
-            cuisine.
-          </p>
+          <div className="w-full flex justify-center px-4">
+            <div className="w-[870px] h-[104px] flex flex-col gap-2 items-center text-center">
+              <h2 className="w-full text-[40px] leading-[48px] font-bold font-[ubuntu] text-[#2D2C2F]">
+                Top Destination
+              </h2>
+              <p className="text-[16px] leading-[24px] font-medium font-[ubuntu] text-[#464549]">
+                The City of Love, where romance, art, and fashion intertwine.
+                Immerse yourself in the enchanting atmosphere of the Eiffel
+                Tower, explore the Louvre's masterpieces, and indulge in
+                world-class cuisine.
+              </p>
+            </div>
+          </div>
         </div>
         <div className="flex flex-wrap lg:flex-nowrap pb-6 gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto">
           <div className="flex flex-col gap-6 w-full sm:w-[calc(50%-12px)] lg:w-[calc(24%-16px)]">
