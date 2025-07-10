@@ -6,7 +6,7 @@ function Searchpanel() {
     <>
       <div className=" w-full ">
         {/* Background container */}
-        <div className="absolute top-[850] w-[824.02px] h-[82px] left-[452px]  flex justify-center px-4 ">
+        <div className="absolute top-[850px] left-1/2 transform -translate-x-1/2 w-[824.02px] h-[82px] flex justify-center px-4">
           <div className="max-w-[1320px] mx-auto px-4">
             <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center gap-4 px-4 py-5 w-full max-w-[824px] mx-auto">
               {/* Where */}

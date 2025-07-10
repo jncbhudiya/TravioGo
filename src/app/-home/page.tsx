@@ -15,14 +15,14 @@ function Homepage() {
     <>
       <div className="w-full min-h-screen h-[900px] md:h-[900px] sm:h-[700px] relative ">
         <Slider />
-        {/* <Searchpanel /> */}
+        <Searchpanel />
         <Trendingdestinations />
         <Step />
         <Populartour />
         <Topdestination />
         <Testmonials />
         <Blog />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
