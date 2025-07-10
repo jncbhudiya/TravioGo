@@ -10,8 +10,11 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
+      
       <footer className="bg-[#1C1C1E] text-white text-sm  font-inter ">
-        <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1 ml-[250px]  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 ">
+      <section className="w-full py-16 px-6 md:px-10 lg:px-24 ">
+      <div className="max-w-[1320px] mx-auto  space-y-4 mb-10 ">
+        <div className="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 ">
           {/* Company Info */}
 
           <div className="space-y-6 max-w-full  lg:max-w-md">
@@ -136,7 +139,10 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+        </div>
+        </section>
       </footer>
+      
     </>
   );
 }

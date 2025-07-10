@@ -20,7 +20,9 @@ function Header() {
     <>
       {" "}
       <div className="relative z-10 ">
-        <nav className="max-w-[1320px] h-[80px] mx-auto flex items-center justify-between px-4 mt-[20px] ml-[204px] relative z-50">
+     
+      <div className="max-w-[1320px] mx-auto  space-y-4 mb-10 ">
+        <nav className="max-w-[1320px] h-[80px] mx-auto flex items-center justify-between px-4 mt-[20px]  relative z-50">
           <img
             src="/images/Logo.png"
             alt="Logo"
@@ -139,7 +141,7 @@ function Header() {
               </div>
             </div>
           )}
-        </nav>
+        </nav></div> 
 
         <div className="mt-[200px] text-base/8 leading-8 tracking-wide  items-center justify-center px-4 text-center flex flex-col gap-[24px]">
           <p className="text-lg md:text-xl font-semibold opacity-75 ">
