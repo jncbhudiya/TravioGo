@@ -13,7 +13,7 @@ export default function DestinationCard({ city, image, rating }: Props) {
       <img
         src={image}
         alt={city}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-cover brightness-80 group-hover:scale-105 transition-transform duration-300"
       />
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
         <h3 className="text-white text-lg font-semibold">{city}</h3>

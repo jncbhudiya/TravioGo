@@ -1,8 +1,6 @@
 import React from "react";
 
-// --- Icon 1: Checkmark Icon ---
-// This component renders a simple checkmark SVG icon.
-// It accepts 'props' to allow for custom styling (e.g., className, width, height).
+
 export const CheckIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
