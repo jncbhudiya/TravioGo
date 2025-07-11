@@ -10,7 +10,7 @@ export default function TopDestinations() {
     <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-24 ">
       <div className="max-w-[1320px] mx-auto text-center mb-10">
         <div className="flex justify-center">
-          <div className="w-full max-w-[870px] h-auto flex flex-col gap-2 items-center text-center">
+          <div className="w-full max-w-[870px] h-auto flex flex-col gap-2 items-center text-center mt-22">
             <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] leading-[40px] sm:leading-[44px] lg:leading-[48px] font-bold font-[ubuntu] text-[#2D2C2F]">
               Top Destination
             </h2>
@@ -25,20 +25,20 @@ export default function TopDestinations() {
       </div>
 
       {/* Responsive Grid */}
-<div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto">
+      <div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto">
         {/* First Column */}
-        <div className="flex flex-col gap-6 w-full sm:w-[calc(50%-12px)] lg:w-[307px]">
-          <div className="w-full h-[307px] lg:w-[307px]">
+        <div className="flex flex-col gap-6 flex-1 min-w-[220px] max-w-[340px]">
+          <div className="w-full h-[220px] sm:h-[260px] md:h-[307px]">
             <DestinationCard {...destinations[0]} />
           </div>
-          <div className="w-full h-[307px] lg:w-[307px]">
+          <div className="w-full h-[220px] sm:h-[260px] md:h-[307px]">
             <DestinationCard {...destinations[1]} />
           </div>
         </div>
 
-        {/* Second Column */}
-        <div className="w-full sm:w-[calc(50%-12px)] lg:w-[420px]">
-          <div className="w-full h-[644px] lg:w-[420px]">
+        {/* Second Column (Tall Card) */}
+        <div className="flex-1 min-w-[220px] max-w-[420px] flex flex-col">
+          <div className="w-full h-[320px] sm:h-[400px] md:h-[644px]">
             <DestinationCard {...destinations[2]} />
           </div>
         </div>
