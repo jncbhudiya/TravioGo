@@ -101,7 +101,7 @@ export default function Footer() {
                         text-[16px] 
                         leading-[24px] 
                         opacity-75 
-                        w-[420px] 
+                       sm:w-[420px]
                         h-[48px]
   "
               >
