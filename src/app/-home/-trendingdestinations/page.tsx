@@ -59,7 +59,7 @@ export default function Trendingdestinations() {
               </div>
             </div>
 
-            <p className="text-[16px] leading-[24px] font-medium text-black font-[Ubuntu] max-w-2xl mt-2">
+            <p className="text-[16px] leading-[24px] font-medium text-[#464549] font-[Ubuntu] max-w-2xl mt-2">
               Immerse yourself in the vibrant culture of trending destinations.
               Discover hidden gems, delectable cuisine, and unforgettable
               experiences.
