@@ -22,14 +22,14 @@ export default function Footer() {
                 />
               </div>
 
-              <p className="text-white/80 text-base leading-relaxed">
+              <p className="text-white/80 text-base leading-relaxed  font-[ubuntu]">
                 We’re passionate travel experts dedicated to curating
                 unforgettable journeys. With years of experience, we’ve
                 perfected the art of crafting tailor-made itineraries that cater
                 to every traveller’s dream.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-6 w-[296px]">
                 {[
                   FaceBookIcon,
                   InstragramIcon,
@@ -49,8 +49,10 @@ export default function Footer() {
 
             {/* 2. About Company - 198px */}
             <div className="w-full sm:w-[198px]">
-              <h4 className="font-semibold mb-6">About Company</h4>
-              <ul className="space-y-4 text-white/80">
+              <h4 className="font-semibold mb-6  font-[ubuntu]   leading-6">
+                About Company
+              </h4>
+              <ul className="space-y-4 text-white/80  font-[ubuntu]">
                 <li>
                   <Link href="#">About Us</Link>
                 </li>
@@ -68,8 +70,10 @@ export default function Footer() {
 
             {/* 3. Support - 198px */}
             <div className="w-full sm:w-[198px]">
-              <h4 className="font-semibold mb-6">Support</h4>
-              <ul className="space-y-4 text-white/80">
+              <h4 className="font-semibold mb-6  font-[ubuntu] size-5 leading-6">
+                Support
+              </h4>
+              <ul className="space-y-4 text-white/80  font-[ubuntu]">
                 <li>
                   <Link href="#">Get in touch</Link>
                 </li>
@@ -87,12 +91,24 @@ export default function Footer() {
 
             {/* 4. Newsletter - 420px */}
             <div className="w-full sm:w-[420px] space-y-6">
-              <h4 className="font-bold text-lg mb-4">Newsletter</h4>
-              <p className="text-white/80 leading-6">
+              <h4 className="font-bold text-lg mb-4  font-[ubuntu]">
+                Newsletter
+              </h4>
+              <p
+                className="
+                        font-[500] 
+                        font-['Ubuntu'] 
+                        text-[16px] 
+                        leading-[24px] 
+                        opacity-75 
+                        w-[420px] 
+                        h-[48px]
+  "
+              >
                 Receive latest news, update, and many other things every week.
               </p>
 
-              <form className="flex items-center border p-1 border-white rounded-md bg-[#1B1D1F] w-full">
+              <form className="flex items-center border p-1 border-white rounded-md bg-[#1B1D1F] w-full h-[]48px">
                 <input
                   type="email"
                   placeholder="Enter your email address"
@@ -100,7 +116,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="bg-[#EC9105] p-3 rounded-md hover:opacity-90"
+                  className="bg-[#EC9105] p-1.5 rounded-md hover:opacity-90 h-[38px] w-[38px]"
                   aria-label="Subscribe"
                 >
                   <SendIcon />
@@ -114,15 +130,15 @@ export default function Footer() {
 
         <div className="max-w-[1320px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center text-white/80 text-sm gap-2">
-            <p className="text-center md:text-left">
+            <p className="text-center md:text-left  font-medium font-[ubuntu]">
               © Travel 2024. All Rights Reserved
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="hover:text-white">
+              <Link href="#" className="hover:text-white  font-[ubuntu]">
                 Terms of Use
               </Link>
               <span>|</span>
-              <Link href="#" className="hover:text-white">
+              <Link href="#" className="hover:text-white  font-[ubuntu]">
                 Privacy Policies
               </Link>
             </div>
