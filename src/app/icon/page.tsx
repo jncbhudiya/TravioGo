@@ -58,11 +58,11 @@ export const Calender = () => (
 
 export const CalenderWhiteIcon = () => (
   <svg
-    className="w-6 h-6 text-gray-800 dark:text-white"
+    className=" text-gray-800 dark:text-white"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="32"
+    height="32"
     fill="none"
     viewBox="0 0 24 24"
   >
@@ -114,11 +114,11 @@ export const FaceIcon = () => (
 );
 export const FaceWhiteIcon = () => (
   <svg
-    className="w-6 h-6 text-gray-800 dark:text-white"
+    className=" text-gray-800 dark:text-white"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="32"
+    height="32"
     fill="none"
     viewBox="0 0 24 24"
   >
@@ -340,8 +340,8 @@ export const WorldIcon = () => (
 export const WorldWhiteIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="32"
+    height="32"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -569,7 +569,7 @@ export const SearchPinkIcon = () => (
 
 export const LoactionIcon = () => (
   <svg
-    className="w-4 h-4 text-orange-500"
+    className=" text-[#EC9105]"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
