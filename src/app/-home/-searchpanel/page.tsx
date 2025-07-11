@@ -8,7 +8,7 @@ function Searchpanel() {
         {/* Background container */}
         <div className="absolute top-[850px] left-1/2 transform -translate-x-1/2 w-[824.02px] h-[82px] flex justify-center px-4">
           <div className="max-w-[1320px] mx-auto px-4">
-            <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center gap-4 px-4 py-5 w-full max-w-[824px] mx-auto">
+            <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center gap-4 px-4 py-5 w-full max-w-[824px] mx-auto  ">
               {/* Where */}
               <div className="flex w-[224.34px]h-[50px] items-center gap-3   sm:w-auto px-2">
                 <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
