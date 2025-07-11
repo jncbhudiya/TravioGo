@@ -35,16 +35,16 @@ function Populartour() {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row w-full max-w-[1320px] mx-auto justify-between items-start md:items-end mb-10 md:mb-12 gap-6">
           <div className="w-full md:max-w-[645px] space-y-2">
-            <h2 className="text-2xl md:text-[40px] font-bold text-[#2D2C2F] font-ubuntu leading-[48px] tracking-normal">
+            <h2 className="text-2xl md:text-[40px] font-bold text-[#2D2C2F] font-[ubuntu] leading-[48px] tracking-normal">
               Popular Tour Packages
             </h2>
-            <p className="text-[#464549] text-sm md:text-[16px] font-medium font-ubuntu leading-[24px]">
+            <p className="text-[#464549] text-sm md:text-[16px] font-medium font-[ubuntu] leading-[24px]">
               Immerse yourself in diverse cultures, breathtaking landscapes, and
               unforgettable experiences. Your global adventure awaits.
             </p>
           </div>
 
-          <div className="flex gap-4 mb-8 mr-2.5">
+          <div className="flex gap-4 mb-14 mr-2.5">
             <button
               onClick={scrollLeft}
               className="w-[38px] h-[38px] p-2 border border-[#202326] rounded-full flex items-center justify-center shadow-md"
@@ -65,7 +65,7 @@ function Populartour() {
           className="flex w-full max-w-[1320px] mx-auto h-[544px] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar gap-6 pb-4"
           ref={scrollRef}
         >
-          <div className="flex gap-[30px] snap-x snap-mandatory w-max">
+          <div className="flex gap-[30px] snap-x snap-mandatory w-max h-max">
             {tourPackages.map((pkg) => (
               <div
                 key={pkg.id}
@@ -106,19 +106,19 @@ function Populartour() {
 
                   {/* Icons Info */}
                   <div className="grid grid-cols-4 gap-y-3 text-center text-gray-700  text-[13px] sm:text-[14px] ">
-                    <div className="flex flex-col items-center gap-[8px]">
+                    <div className="flex flex-col items-center gap-[8px] font-[Ubuntu]">
                       <PlaneIcon />
                       <span>{pkg.flights} Flights</span>
                     </div>
-                    <div className="flex flex-col items-center gap-[8px]">
+                    <div className="flex flex-col items-center gap-[8px] font-[Ubuntu]">
                       <HotelIcon />
                       <span>{pkg.hotels} Hotel</span>
                     </div>
-                    <div className="flex flex-col items-center gap-[8px]">
+                    <div className="flex flex-col items-center gap-[8px] font-[Ubuntu]">
                       <CarIcon />
                       <span>{pkg.transfers} Transfers</span>
                     </div>
-                    <div className="flex flex-col items-center gap-[8px]">
+                    <div className="flex flex-col items-center gap-[8px] font-[Ubuntu]">
                       <ActivityIcon />
                       <span>{pkg.activities} Activities</span>
                     </div>
@@ -129,7 +129,7 @@ function Populartour() {
                 <div className="flex justify-between items-center pt-4">
                   <p className="text-gray-900 text-[16px] font-bold font-[Ubuntu]">
                     {pkg.price}{" "}
-                    <span className="text-sm font-normal text-gray-500 font-[Ubuntu]">
+                    <span className="text-sm font-normal text-[#464549] font-[Ubuntu]">
                       /Per person
                     </span>
                   </p>
