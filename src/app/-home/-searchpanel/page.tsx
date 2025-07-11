@@ -65,7 +65,7 @@ function Searchpanel() {
 
               {/* Search Button */}
               <div className="w-full sm:w-auto px-2">
-                <button className="flex items-center justify-center gap-2 bg-[#EC9105] text-white text-sm font-medium rounded-full w-full sm:w-[119px] h-[46px] px-4 py-2">
+                <button className="flex items-center justify-center gap-2 bg-[#EC9105] text-white text-[20px] font-medium font-[ubuntu] rounded-full w-full sm:w-[119px] h-[46px] px-4 py-2">
                   <SearchIcon />
                   Search
                 </button>
