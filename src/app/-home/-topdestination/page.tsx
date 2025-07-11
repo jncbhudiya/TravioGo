@@ -61,8 +61,9 @@ export default function TopDestinations() {
       </div>
 
       {/* Button */}
+     
       <div className="flex justify-center mt-10">
-        <button className="px-8 py-3 bg-[#EC9105] text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out flex items-center space-x-2">
+        <button className="px-6 sm:px-8 py-3 bg-[#EC9105] text-white font-semibold font-[ubuntu] rounded-full shadow-[0_8px_24px_0_rgba(236,145,5,0.4)] transition duration-300 ease-in-out flex items-center space-x-2">
           <span>All Destination</span> <RightArrow />
         </button>
       </div>
