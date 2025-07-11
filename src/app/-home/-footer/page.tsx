@@ -96,7 +96,7 @@ export default function Footer() {
               </h4>
               <p
                 className="
-                        font-[500] 
+                       
                         font-['Ubuntu'] 
                         text-[16px] 
                         leading-[24px] 
