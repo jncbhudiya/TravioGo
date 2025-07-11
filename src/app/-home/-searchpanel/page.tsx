@@ -6,9 +6,11 @@ function Searchpanel() {
     <>
       <div className=" w-full ">
         {/* Background container */}
-        <div className="absolute top-[850px] left-1/2 transform -translate-x-1/2 w-[824.02px] h-[82px] flex justify-center px-4">
-          <div className="max-w-[1320px] mx-auto px-4">
-            <div className="bg-white text-black rounded-full shadow-lg flex flex-wrap lg:flex-nowrap items-center gap-4 px-4 py-5 w-full max-w-[824px] mx-auto  ">
+        <div className="absolute top-[700px] lg:top-[850px]  left-1/2 transform -translate-x-1/2 w-max-[824.02px] h-[82px] flex justify-center px-4">
+          <div className="max-w-[1320px] mx-auto px-4 ">
+            <div
+              className=" bg-white text-black shadow-lg flex flex-wrap lg:flex-nowrap items-center gap-4 px-4 py-5 w-full rounded-[16px] sm:rounded-[20px] md:rounded-[24px] lg:rounded-full  transition-all duration-300"
+            >
               {/* Where */}
               <div className="flex w-[224.34px]h-[50px] items-center gap-3   sm:w-auto px-2">
                 <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
@@ -25,7 +27,6 @@ function Searchpanel() {
                   />
                 </div>
               </div>
-
               {/* Date */}
               <div className="flex w-[224.34px]h-[50px] items-center gap-3 w-full sm:w-auto px-2">
                 <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
@@ -42,7 +43,6 @@ function Searchpanel() {
                   />
                 </div>
               </div>
-
               {/* Tour Type */}
               <div className="flex w-[224.34px]h-[50px] items-center gap-3 w-full sm:w-auto px-2">
                 <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
@@ -59,7 +59,6 @@ function Searchpanel() {
                   />
                 </div>
               </div>
-
               {/* Search Button */}
               <div className="w-full sm:w-auto px-2">
                 <button className="flex items-center justify-center gap-2 bg-[#EC9105] text-white text-sm font-medium rounded-full w-full sm:w-[119px] h-[46px] px-4 py-2">
