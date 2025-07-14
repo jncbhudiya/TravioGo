@@ -3,80 +3,86 @@ import React from "react";
 
 function Searchpanel() {
   return (
-    <>
-      <div className=" w-full ">
-        {/* Background container */}
-        <div
-          className=" absolute top-[520px]  sm:top-[620px] md:top-[860px] lg:top-[820px] xl:top-[850px] left-1/2 transform -translate-x-1/2 w-full  max-w-[95%] sm:max-w-[620px] md:max-w-[760px] lg:max-w-[960px] xl:max-w-[1100px] 2xl:max-w-[1220px] flex  justify-center  px-4"
-        >
-          <div className="max-w-[1320px] mx-auto px-4 ">
-            <div className="bg-white text-black shadow-lg flex flex-wrap sm:flex-nowrap items-center gap-4 px-4 py-5 w-full rounded-[16px] sm:rounded-[20px] md:rounded-[24px] lg:rounded-full transition-all duration-300">
+    <div className="w-full">
+      {/* Background container - positioned absolutely over the slider */}
+      <div
+        className="absolute w-[820px] max-w-[95%] left-1/2 transform -translate-x-1/2 px-4
+        top-[750px] 
+        sm:top-[850px] 
+        md:top-[850px] 
+        lg:top-[850px] 
+        xl:top-[800px] 
+        2xl:top-[850px]"
+      >
+        <div className="max-w-[1320px] mx-auto">
+          {/* Search panel container */}
+          <div
+            className="bg-white text-black shadow-lg flex flex-col sm:flex-row items-center gap-4 p-4 w-full rounded-2xl
+            lg:rounded-full 
+            transition-all duration-300"
+          >
+            {/* Search fields container */}
+            <div className="flex flex-col sm:flex-row w-full gap-4">
               {/* Where */}
-              <div className="flex w-[224.34px] h-[50px] items-center gap-3 sm:w-auto px-2">
-                <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
+              <div className="flex items-center gap-3 w-[224.34px]  ">
+                <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex-shrink-0 flex items-center justify-center">
                   <WorldIcon />
                 </div>
-                <div className="flex flex-col w-full h-[39px] sm:w-[128.36px] gap-1">
-                  <p className="text-[16px] font-bold font-[ubuntu] leading-4">
+                <div className="flex flex-col w-full gap-1">
+                  <p className="text-base font-bold font-[ubuntu] leading-4">
                     Where
                   </p>
                   <input
                     type="text"
                     placeholder="Search destinations"
-                    className="outline-none text-sm w-full font-[ubuntu]"
+                    className="outline-none text-sm w-full font-[ubuntu] bg-transparent"
                   />
                 </div>
               </div>
 
-              {/* Wrap Date and Tour Type in one div */}
-              <div className="flex flex-wrap sm:flex-nowrap gap-4 w-full sm:w-auto px-2">
-                {/* Date */}
-                <div className="flex w-[224.34px] h-[50px] items-center gap-3 sm:w-auto">
-                  <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
-                    <Calender />
-                  </div>
-                  <div className="flex flex-col w-full sm:w-[120px] gap-1">
-                    <p className="text-[16px] font-bold font-[ubuntu] leading-4">
-                      Date
-                    </p>
-                    <input
-                      type="text"
-                      placeholder="Choose Date"
-                      className="outline-none text-sm w-full font-[ubuntu]"
-                    />
-                  </div>
+              {/* Date */}
+              <div className="flex items-center gap-3 w-[224.34px]">
+                <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex-shrink-0 flex items-center justify-center">
+                  <Calender />
                 </div>
-
-                {/* Tour Type */}
-                <div className="flex h-[50px] items-center gap-3 sm:w-auto">
-                  <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex items-center justify-center">
-                    <FaceIcon />
-                  </div>
-                  <div className="flex flex-col w-full sm:w-[120px] gap-1">
-                    <div className="text-[16px] font-bold font-[ubuntu] leading-4">
-                      Tour Type
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="All Tour"
-                      className="outline-none text-sm w-full font-[ubuntu]"
-                    />
-                  </div>
+                <div className="flex flex-col w-full gap-1">
+                  <p className="text-base font-bold font-[ubuntu] leading-4">
+                    Date
+                  </p>
+                  <input
+                    type="text"
+                    placeholder="Choose Date"
+                    className="outline-none text-sm w-full font-[ubuntu] bg-transparent"
+                  />
                 </div>
               </div>
 
-              {/* Search Button */}
-              <div className="w-full sm:w-auto px-2">
-                <button className="flex items-center justify-center gap-2 bg-[#EC9105] text-white text-[20px] font-medium font-[ubuntu] rounded-full w-full sm:w-[119px] h-[46px] px-4 py-2">
-                  <SearchIcon />
-                  Search
-                </button>
+              {/* Tour Type */}
+              <div className="flex items-center gap-3 w-[224.34px]">
+                <div className="w-12 h-12 rounded-full border border-[#D8E0E6] flex-shrink-0 flex items-center justify-center">
+                  <FaceIcon />
+                </div>
+                <div className="flex flex-col w-full gap-1">
+                  <div className="text-base font-bold font-[ubuntu] leading-4">
+                    Tour Type
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="All Tour"
+                    className="outline-none text-sm w-full font-[ubuntu] bg-transparent"
+                  />
+                </div>
               </div>
+              {/* Search Button - appears after fields on mobile */}
+              <button className="flex items-center justify-center gap-2 bg-[#EC9105] text-white text-lg sm:text-xl font-medium font-[ubuntu] rounded-full w-full sm:w-[119px] h-[46px] px-4 py-2 flex-shrink-0">
+                <SearchIcon />
+                <span className="text-white font-[ubuntu]">Search</span>
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

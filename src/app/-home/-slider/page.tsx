@@ -93,7 +93,10 @@ function Slider() {
       </div>
 
       {/* DOTS - Only show on 992px–1199px */}
-      <div className="show-dots-lg absolute left-0 right-0 bottom-20 z-20 justify-center">
+      <div
+        className="show-dots-lg absolute left-0 right-0 bottom-20 z-20 justify-center   "
+       
+      >
         <div className="flex gap-3 items-center justify-center">
           {backgroundImages.map((_, idx) => (
             <button
