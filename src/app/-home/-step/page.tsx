@@ -73,16 +73,19 @@ function Step() {
               <img
                 src="/images/stepgirl.jpg"
                 alt="Woman with luggage"
-                className="w-full h-[300px] sm:h-[400px] mt-15 lg:h-[489px] object-cover rounded-[30px]"
+                className="w-full h-[300px] sm:h-[400px] mt-15 lg:h-[489px] object-cover rounded-[30px] object-right-top"
               />
             </div>
             {/* Hill View */}
             <div
-              className="absolute top-4 left-1/2 -translate-x-1/2 lg:top-0 lg:left-0 lg:translate-x-0 
-             w-[200px] sm:w-[260px] lg:w-[345px] 
-             h-[120px] sm:h-[205px] lg:h-[205px] 
-             border-[10px] sm:border-[16px] lg:border-[20px] 
-             border-white rounded-[50px] overflow-hidden shadow-lg"
+              className="absolute 
+        top-4 left-1/2 -translate-x-1/2 
+        lg:top-0 lg:left-0 lg:translate-x-0
+        w-[200px] sm:w-[260px] lg:w-[345px]
+        h-[120px] sm:h-[205px] lg:h-[205px]
+        border-[10px] sm:border-[16px] lg:border-[20px] 
+        border-white rounded-[50px] overflow-hidden shadow-lg 
+        hidden xl:block"
             >
               <img
                 src="/images/hillstep.jpg"
@@ -90,7 +93,6 @@ function Step() {
                 className="w-full h-full object-cover"
               />
             </div>
-
             {/* Country Card */}
             <div
               className="absolute 

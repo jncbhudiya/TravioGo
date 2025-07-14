@@ -29,21 +29,26 @@ export default function Footer() {
                 to every traveller’s dream.
               </p>
 
-              <div className="flex flex-wrap gap-6 w-[296px]">
-                {[
-                  FaceBookIcon,
-                  InstragramIcon,
-                  LinkedinIcon,
-                  PinterestIcon,
-                  PinterestIcon,
-                ].map((Icon, index) => (
-                  <div
-                    key={index}
-                    className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center"
-                  >
-                    <Icon />
-                  </div>
-                ))}
+              <div className="w-full lg:w-auto">
+                <h4 className="font-bold text-lg mb-4 font-[ubuntu]">
+                  Follow Us
+                </h4>
+                <div className="flex flex-wrap gap-4 w-full">
+                  {[
+                    FaceBookIcon,
+                    InstragramIcon,
+                    LinkedinIcon,
+                    PinterestIcon,
+                    PinterestIcon,
+                  ].map((Icon, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#FFFFFF1F] h-10 w-10 p-2 rounded-lg flex items-center justify-center hover:bg-[#EC9105] transition-colors"
+                    >
+                      <Icon />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -94,17 +99,7 @@ export default function Footer() {
               <h4 className="font-bold text-lg mb-4  font-[ubuntu]">
                 Newsletter
               </h4>
-              <p
-                className="
-                       
-                        font-['Ubuntu'] 
-                        text-[16px] 
-                        leading-[24px] 
-                        opacity-75 
-                       sm:w-[420px]
-                        h-[48px]
-  "
-              >
+              <p className=" font-['Ubuntu']   text-[16px]    leading-[24px]    opacity-75  sm:w-[420px]  h-[48px] ">
                 Receive latest news, update, and many other things every week.
               </p>
 
