@@ -41,7 +41,7 @@ body {
 } */
 
 
-@media (min-width: 320px) and (max-width: 1199px) {
+@media (min-width: 10px) and (max-width: 1199px) {
   .hide-arrows-lg {
     display: none !important;
   }

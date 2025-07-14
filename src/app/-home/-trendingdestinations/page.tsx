@@ -23,11 +23,15 @@ export default function Trendingdestinations() {
     <section className="w-full bg-[#FEF5E6] py-16 px-6 md:px-10 lg:px-24 ">
       <div className="max-w-[1320px] mx-auto  space-y-4  ">
         {/* Use Title and pass scrollRef */}
-        <Title
-          scrollRef={scrollRef}
-          title="Trending Destinations"
-          description="Immerse yourself in the vibrant culture of trending destinations. Discover hidden gems, delectable cuisine, and unforgettable experiences."
-        />
+        <div
+          className="relative w-full block mt-[50px] sm:mt-[70px] md:mt-[50px]"
+        >
+          <Title
+            scrollRef={scrollRef}
+            title="Trending Destinations"
+            description="Immerse yourself in the vibrant culture of trending destinations. Discover hidden gems, delectable cuisine, and unforgettable experiences."
+          />
+        </div>
 
         <div
           ref={scrollRef}
