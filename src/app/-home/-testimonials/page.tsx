@@ -1,9 +1,13 @@
-import { StarBalckFilledIcon, StarFilledWhiteIcon, StarWhiteIcon } from "@/app/icon/page";
+import {
+  StarBalckFilledIcon,
+  StarFilledWhiteIcon,
+  StarWhiteIcon,
+} from "@/app/icon/page";
 import React from "react";
 
 function Testimonials() {
   return (
-    <section className="w-full bg-white py-12 px-4 md:py-16 md:px-8  ">
+    <section className="w-full  bg-white py-12 px-4 md:py-16 md:px-8  ">
       <div className="max-w-[1320px] mt-6  mx-auto flex flex-col lg:flex-row items-stretch lg:items-start justify-between gap-8">
         {/* LEFT: Heading & Stats */}
         <div className="flex-1 max-w-full lg:max-w-[645px] flex flex-col ">

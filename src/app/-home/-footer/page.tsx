@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#1C1C1E] text-white text-sm font-inter">
-      <section className="w-full py-16 px-6 md:px-10 lg:px-24">
+      <section className="w-full  py-16 px-6 md:px-10 lg:px-24">
         <div className="max-w-[1320px] mx-auto space-y-4 mb-10">
           <div className="flex flex-wrap justify-between gap-2">
             <div className="w-full sm:w-[420px] space-y-6">

@@ -184,7 +184,7 @@ export const PinterestIcon = () => (
 
 export const LeftArrow = () => (
   <svg
-    className="w-6 h-6 text-gray-800 dark:text-black"
+    className="w-6 h-6 text-black group-hover:text-white transition-colors duration-200"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -201,6 +201,7 @@ export const LeftArrow = () => (
     />
   </svg>
 );
+
 
 export const LeftWhiteArrow = () => (
   <svg
@@ -223,7 +224,7 @@ export const LeftWhiteArrow = () => (
 );
 export const RightBlackArrow = () => (
   <svg
-    className="w-6 h-6 text-gray-800 dark:text-black "
+    className="w-6 h-6 text-black group-hover:text-white transition-colors duration-200"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="22px"
