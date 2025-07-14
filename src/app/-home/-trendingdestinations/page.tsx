@@ -24,7 +24,7 @@ export default function Trendingdestinations() {
       <div className="max-w-[1320px] mx-auto  space-y-4  ">
         {/* Use Title and pass scrollRef */}
         <div
-          className="relative w-full block mt-[50px] sm:mt-[70px] md:mt-[50px]"
+          className="relative w-full block mt-[50px] sm:mt-[70px] md:mt-[55px]"
         >
           <Title
             scrollRef={scrollRef}

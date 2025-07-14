@@ -7,18 +7,17 @@ import React from "react";
 
 function Testimonials() {
   return (
-    <section className="w-full  bg-white py-12 px-4 md:py-16 md:px-8  ">
-      <div className="max-w-[1320px] mt-6  mx-auto flex flex-col lg:flex-row items-stretch lg:items-start justify-between gap-8">
+    <section className="w-full bg-white py-16 px-6 md:px-10 lg:px-24 ">
+      <div className="max-w-[1320px] mx-auto  space-y-4 flex flex-col lg:flex-row items-stretch lg:items-start justify-between gap-8 ">
         {/* LEFT: Heading & Stats */}
         <div className="flex-1 max-w-full lg:max-w-[645px] flex flex-col ">
           {/* Heading */}
-          <div className="flex  flex-col gap-9 lg:max-h-[192px] lg:max-w-[645px]">
-            <h2 className="font-[ubuntu] font-bold text-[28px] md:text-[32px] lg:text-[36px] leading-[36px] md:leading-[44px] lg:leading-[48px] text-[#2D2C2F] mb-4">
-              What our customers are
-              <br className="hidden sm:block" /> saying us?
+          <div className="flex flex-col gap-6 lg:gap-9">
+            <h2 className="font-[ubuntu] font-bold text-[28px] md:text-[32px] lg:text-[36px] leading-[36px] md:leading-[44px] lg:leading-[48px] text-[#2D2C2F]">
+              What our customers are saying us?
             </h2>
-            <p className="font-[ubuntu] font-medium text-[#464549] text-base leading-[24px] opacity-80 max-w-full">
-              Don’t just take our word for it. See what our travelers have to
+            <p className="font-[ubuntu] font-medium text-[#464549] text-base leading-[24px] opacity-80 max-w-full lg:max-w-[540px]">
+              Don't just take our word for it. See what our travelers have to
               say about their incredible journeys with us.
             </p>
           </div>

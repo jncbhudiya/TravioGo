@@ -23,10 +23,13 @@ export default function TopDestinations() {
           </div>
         </div>
       </div>
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-w-[1320px] mx-auto lg:justify-between items-stretch">
+        {/* </div>
 
-      {/* Responsive Grid */}
-      <div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto">
+      <div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto"> */}
         {/* First Column */}
+
+        
         <div className="flex flex-col gap-6 flex-1 min-w-[220px] max-w-[340px]">
           <div className="w-full h-[220px] sm:h-[260px] md:h-[307px]">
             <DestinationCard {...destinations[0]} />
@@ -61,7 +64,7 @@ export default function TopDestinations() {
       </div>
 
       {/* Button */}
-     
+
       <div className="flex justify-center mt-10">
         <button className="px-6 sm:px-8 py-3 bg-[#EC9105] text-white font-semibold font-[ubuntu] rounded-full shadow-[0_8px_24px_0_rgba(236,145,5,0.4)] transition duration-300 ease-in-out flex items-center space-x-2">
           <span>All Destination</span> <RightArrow />
