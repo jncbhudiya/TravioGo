@@ -21,7 +21,7 @@ export default function Trendingdestinations() {
 
   return (
     <section className="w-full bg-[#FEF5E6] py-16 px-6 md:px-10 lg:px-24 ">
-      <div className="max-w-[1320px] mx-auto  space-y-4 mb-10 mt-12 ">
+      <div className="max-w-[1320px] mx-auto  space-y-4  ">
         {/* Use Title and pass scrollRef */}
         <Title
           scrollRef={scrollRef}

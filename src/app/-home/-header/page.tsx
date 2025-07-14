@@ -18,9 +18,11 @@ function Header() {
   };
   return (
     <>
+    
       <div className="relative z-10">
         <div className="header-container max-w-[1320px] mx-auto px-4 md:px-10 lg:px-16 xl:px-0 space-y-4 mb-10">
           <nav className="header-nav max-w-[1320px] h-[80px] mx-auto flex items-center justify-between mt-[20px] relative z-50 gap-4 lg:gap-8 xl:gap-10">
+          
             <img
               src="/images/Logo.png"
               alt="Logo"

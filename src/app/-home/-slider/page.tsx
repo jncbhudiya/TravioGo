@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../-header/page";
 import { LeftWhiteArrow, RightArrow } from "@/app/icon/page";
 
@@ -12,6 +12,35 @@ const backgroundImages = [
 
 function Slider() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
+
+  // Update current slide on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollRef.current) {
+        const scrollLeft = scrollRef.current.scrollLeft;
+        const width = scrollRef.current.clientWidth;
+        const idx = Math.round(scrollLeft / width);
+        setCurrent(idx);
+      }
+    };
+    const ref = scrollRef.current;
+    if (ref) ref.addEventListener("scroll", handleScroll);
+    return () => {
+      if (ref) ref.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Scroll to slide when dot clicked
+  const goToSlide = (idx: number) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: idx * scrollRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+    setCurrent(idx);
+  };
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -41,25 +70,46 @@ function Slider() {
         {backgroundImages.map((image, index) => (
           <div
             key={index}
-            className="w-full flex-shrink-0 h-full brightness-50 bg-cover bg-no-repeat  snap-start  bg-[center_70%] "
+            className="w-full flex-shrink-0 h-full brightness-50 bg-cover bg-no-repeat snap-start bg-[center_70%]"
             style={{ backgroundImage: `url(${image})` }}
           ></div>
         ))}
       </div>
 
-      {/* ARROWS */}
-      <button
-        onClick={scrollLeft}
-        className="absolute   top-1/2 left-10 z-20 -mt-[42px] transform -translate-y-1/2 border-2 rounded-full p-3 shadow-md    transition"
-      >
-        <LeftWhiteArrow />
-      </button>
-      <button
-        onClick={scrollRight}
-        className="absolute top-1/2 right-10 z-20 -mt-[42px] transform -translate-y-1/2 border-2 rounded-full p-3 shadow-md    transition"
-      >
-        <RightArrow />
-      </button>
+      {/* ARROW CONTAINER */}
+      <div className="absolute top-1/2 left-0 right-0 z-20 px-2 sm:px-4 md:px-6 lg:px-10 flex justify-between items-center -translate-y-1/2 hide-arrows-lg">
+        <button
+          onClick={scrollLeft}
+          className="border border-white rounded-full p-2 sm:p-3 bg-black/30 hover:bg-black/50 transition shadow-md"
+        >
+          <LeftWhiteArrow />
+        </button>
+        <button
+          onClick={scrollRight}
+          className="border border-white rounded-full p-2 sm:p-3 bg-black/30 hover:bg-black/50 transition shadow-md"
+        >
+          <RightArrow />
+        </button>
+      </div>
+
+      {/* DOTS - Only show on 992px–1199px */}
+      <div className="show-dots-lg absolute left-0 right-0 bottom-20 z-20 justify-center">
+        <div className="flex gap-3 items-center justify-center">
+          {backgroundImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
+              className={`w-3 h-3 rounded-full transition-all duration-200
+                ${
+                  current === idx
+                    ? "bg-yellow-600 opacity-100"
+                    : "bg-yellow-600 opacity-30"
+                }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* FOREGROUND CONTENT */}
       <div className="absolute inset-0 z-10">

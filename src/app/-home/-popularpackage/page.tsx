@@ -5,15 +5,12 @@ import {
   CarIcon,
   HeartIcon,
   HotelIcon,
-  LeftArrow,
   PlaneIcon,
-  RightBlackArrow,
   RightBlackSmallArrow,
   StarIcon,
 } from "@/app/icon/page";
 import React, { useRef } from "react";
 import { tourPackages } from "./tourPackages";
-import Arrow from "../commoncomponent/-arrow/page";
 import Title from "../commoncomponent/-title/page";
 
 function Populartour() {
@@ -21,8 +18,8 @@ function Populartour() {
 
   return (
     <>
-      <section className="w-full bg-[#FEF5E6] py-16 px-6 md:px-10 lg:px-24 ">
-        <div className="max-w-[1320px] mx-auto  space-y-4 mb-10  ">
+      <section className="w-full bg-[#FEF5E6] py-10 sm:py-12 md:py-16 px-6 md:px-10 lg:px-24 ">
+        <div className="max-w-[1320px] mx-auto space-y-4  ">
           {/* Header Section */}
           <Title
             scrollRef={scrollRef}

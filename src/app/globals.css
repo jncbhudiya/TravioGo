@@ -32,3 +32,25 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+
+/* @media (min-width: 992px) and (max-width: 1199px) {
+  .hide-arrows {
+    display: none !important;
+  }
+} */
+
+
+@media (min-width: 320px) and (max-width: 1199px) {
+  .hide-arrows-lg {
+    display: none !important;
+  }
+  .show-dots-lg {
+    display: flex !important;
+  }
+}
+
+
+.show-dots-lg {
+  display: none;
+}
