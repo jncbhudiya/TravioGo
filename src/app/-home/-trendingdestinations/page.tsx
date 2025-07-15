@@ -24,10 +24,10 @@ export default function Trendingdestinations() {
       <div className="max-w-[1320px] mx-auto  space-y-4  ">
         {/* Use Title and pass scrollRef */}
         <div
-          className="relative w-full block mt-[50px] sm:mt-[70px] md:mt-[55px]"
+          className="relative w-full block mt-[70px] sm:mt-[70px] md:mt-[55px]"
         >
           <Title
-            scrollRef={scrollRef}
+            scrollRef={scrollRef} 
             title="Trending Destinations"
             description="Immerse yourself in the vibrant culture of trending destinations. Discover hidden gems, delectable cuisine, and unforgettable experiences."
           />

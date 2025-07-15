@@ -31,7 +31,7 @@ function Populartour() {
           />
           {/* Cards Scrollable Container */}
           <div
-            className="flex w-full max-w-[1320px] mx-auto h-[544px] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar gap-6 pb-4"
+            className="flex w-full max-w-[1320px] mx-auto h-[544px] overflow-x-auto   snap-x snap-mandatory no-scrollbar gap-6 pb-4"
             ref={scrollRef}
           >
             <div className="flex gap-[30px] snap-x snap-mandatory w-max h-max">

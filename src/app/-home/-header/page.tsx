@@ -18,11 +18,9 @@ function Header() {
   };
   return (
     <>
-    
       <div className="relative z-10">
         <div className="header-container max-w-[1320px] mx-auto px-4 md:px-10 lg:px-16 xl:px-0 space-y-4 mb-10">
           <nav className="header-nav max-w-[1320px] h-[80px] mx-auto flex items-center justify-between mt-[20px] relative z-50 gap-4 lg:gap-8 xl:gap-10">
-          
             <img
               src="/images/Logo.png"
               alt="Logo"
@@ -142,13 +140,14 @@ function Header() {
             )}
           </nav>
         </div>
+      
 
-        <div className="mt-58 font-[ubuntu] text-base/8 leading-8 tracking-wide  items-center justify-center px-4 text-center flex flex-col gap-[24px]">
-          <p className="text-lg md:text-xl font-semibold opacity-75 ">
+        <div className="mt-20 sm:mt-30 md:mt-40 lg:mt-58 font-[ubuntu] text-base/8 leading-8 tracking-wide items-center justify-center px-4 text-center flex flex-col gap-[24px]">
+          <p className="text-lg md:text-xl font-semibold opacity-75">
             Seamless Booking: 15,000+ Multi-Day Adventures Await
           </p>
 
-          <h1 className="text-4xl font-[ubuntu] md:text-[70px] font-bold leading-tight ">
+          <h1 className="text-4xl font-[ubuntu] md:text-[70px] font-bold leading-tight">
             Await Your Exploration with <br />
             <span className="text-white">Tailored Tours & Packages</span>
           </h1>
