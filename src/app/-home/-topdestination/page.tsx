@@ -24,13 +24,8 @@ export default function TopDestinations() {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-w-[1320px] mx-auto lg:justify-between items-stretch">
-        {/* </div>
-
-      <div className="flex flex-wrap lg:flex-nowrap gap-6 lg:gap-8 justify-center items-stretch max-w-[1320px] mx-auto"> */}
         {/* First Column */}
-
-        
-        <div className="flex flex-col gap-6 flex-1 min-w-[220px] max-w-[340px]">
+        <div className="flex flex-col gap-6 w-full lg:flex-1 lg:min-w-[220px] lg:max-w-[340px]">
           <div className="w-full h-[220px] sm:h-[260px] md:h-[307px]">
             <DestinationCard {...destinations[0]} />
           </div>
@@ -40,15 +35,15 @@ export default function TopDestinations() {
         </div>
 
         {/* Second Column (Tall Card) */}
-        <div className="flex-1 min-w-[220px] max-w-[420px] flex flex-col">
+        <div className="w-full lg:flex-1 lg:min-w-[220px] lg:max-w-[420px] flex flex-col">
           <div className="w-full h-[320px] sm:h-[400px] md:h-[644px]">
             <DestinationCard {...destinations[2]} />
           </div>
         </div>
 
         {/* Third Column */}
-        <div className="flex flex-col gap-6 w-full lg:w-[533px]">
-          <div className="w-full h-[307px] lg:w-[533px]">
+        <div className="flex flex-col gap-6 w-full lg:w-[500px]">
+          <div className="w-full h-[307px]">
             <DestinationCard {...destinations[3]} />
           </div>
 
@@ -56,7 +51,7 @@ export default function TopDestinations() {
             <div className="w-full sm:w-[226px] h-[307px]">
               <DestinationCard {...destinations[4]} />
             </div>
-            <div className="w-full sm:w-[277px] h-[307px]">
+            <div className="w-full sm:w-[255px] h-[307px]">
               <DestinationCard {...destinations[5]} />
             </div>
           </div>
