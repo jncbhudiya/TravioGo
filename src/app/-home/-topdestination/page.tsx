@@ -10,7 +10,7 @@ export default function TopDestinations() {
     <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-24 ">
       <div className="max-w-[1320px] mx-auto text-center mb-10">
         <div className="flex justify-center">
-          <div className="w-full max-w-[870px] h-auto flex flex-col gap-2 items-center text-center mt-22">
+          <div className="w-full max-w-[870px] h-auto flex flex-col gap-2 items-center text-center mt-15">
             <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] leading-[40px] sm:leading-[44px] lg:leading-[48px] font-bold font-[ubuntu] text-[#2D2C2F]">
               Top Destination
             </h2>

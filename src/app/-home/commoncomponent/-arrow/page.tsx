@@ -20,7 +20,7 @@ function Arrow({ scrollRef }: ArrowProps) {
   };
 
   return (
-    <div className="flex gap-4 mb-14 mr-2.5">
+    <div className="flex gap-4  mr-2.5">
       <button
         onClick={scrollLeft}
         className="group w-[38px] h-[38px] p-2 border border-[#202326] rounded-full flex items-center justify-center shadow-md transition-colors duration-200 hover:bg-black"
