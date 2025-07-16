@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export const CheckIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +201,6 @@ export const LeftArrow = () => (
   </svg>
 );
 
-
 export const LeftWhiteArrow = () => (
   <svg
     className="w-6 h-6  text-gray-800 dark:text-white"
@@ -377,14 +375,14 @@ export const PlaneIcon = () => (
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    fill="currentColor" 
+    fill="currentColor"
     className="icon icon-tabler icons-tabler-outline icon-tabler-plane-tilt text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path
       d="M14.5 6.5l3 -2.9a2.05 2.05 0 0 1 2.9 2.9l-2.9 3l2.5 7.5l-2.5 2.55l-3.5 -6.55l-3 3v3l-2 2l-1.5 -4.5l-4.5 -1.5l2 -2h3l3 -3l-6.5 -3.5l2.5 -2.5l7.5 2.5z"
-      fill="currentColor" 
-      stroke="none" 
+      fill="currentColor"
+      stroke="none"
     />
   </svg>
 );
@@ -735,5 +733,46 @@ export const ContactUsIcon = () => (
     <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2c-8.072 -.49 -14.51 -6.928 -15 -15a2 2 0 0 1 2 -2" />
   </svg>
 );
+
+export const Lock = () => (
+  <svg
+    className="h-5 w-5 text-gray-400"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      fillRule="evenodd"
+      d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+export const Email = () => (
+  <svg
+    className="h-5 w-5 text-gray-400"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+  </svg>
+);
+
+export const User = () => (
+  <svg
+    className="h-5 w-5 text-gray-400"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      fillRule="evenodd"
+      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+// export const DestinationsIcon = () =>()
 
 // export const DestinationsIcon = () =>()

@@ -8,10 +8,32 @@ import {
   HomeIcon,
   ToursIcon,
 } from "@/app/icon/page";
-import React, { useState } from "react";
-
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../../firebase";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [user, setUser] = useState<any | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        setUserEmail(user.email ?? null);
+      } else {
+        setUser(null);
+        setUserEmail(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+  const handleLogout = () => {
+    signOut(auth);
+    setUser(null);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -53,12 +75,35 @@ function Header() {
               <span className="cursor-pointer font-[ubuntu] hover:text-[#EC9105] transition-colors duration-200">
                 USD
               </span>
-              <button className=" font-[ubuntu] hover:underline  text-white hover:text-[#EC9105] transition-colors duration-200">
-                Sign up
-              </button>
-              <button className="bg-[#EC9105] font-[ubuntu] text-white px-4 py-2 rounded-full shadow-md hover:bg-[#d47f04] transition-colors duration-200">
-                Log in
-              </button>
+              {user ? (
+                <div className="flex items-center gap-4">
+                  {/* User Initial Circle - using displayName (username) */}
+                  <div className="w-10 h-10 bg-[#EC9105] text-white font-[ubuntu] flex items-center justify-center rounded-full text-lg uppercase">
+                    {user.displayName?.slice(0, 2) || "US"}
+                  </div>
+
+                  {/* Logout Button */}
+                  <button
+                    onClick={handleLogout}
+                    className="text-sm text-red-600 font-[ubuntu] hover:underline transition-colors duration-200"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <Link href="/signup" passHref>
+                    <button className="font-[ubuntu] hover:underline text-white hover:text-[#EC9105] transition-colors duration-200">
+                      Sign up
+                    </button>
+                  </Link>
+                  <Link href="/login" passHref>
+                    <button className="bg-[#EC9105] font-[ubuntu] text-white px-4 py-2 rounded-full shadow-md hover:bg-[#d47f04] transition-colors duration-200">
+                      Log in
+                    </button>
+                  </Link>
+                </>
+              )}
             </div>
             {/* Mobile Menu Overlay  */}
             {isMenuOpen && (
@@ -69,7 +114,6 @@ function Header() {
                 />
 
                 <div className="relative w-[280px] h-full flex flex-col justify-between animate-slide-in-right p-[2px] bg-gradient-to-r from-amber-400 to-amber-800 rounded-lg">
-             
                   <div className="bg-white h-full w-full rounded-[calc(0.5rem-2px)] p-6 flex flex-col justify-between">
                     <button
                       onClick={toggleMenu}
