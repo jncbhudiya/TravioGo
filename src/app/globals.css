@@ -54,3 +54,17 @@ body {
 .show-dots-lg {
   display: none;
 }
+
+
+/* globals.css */
+@media (max-width: 900px) {
+  .below-800\:flex {
+    display: flex !important;
+  }
+  .below-800\:block {
+    display: block !important;
+  }
+  .below-800\:hidden {
+    display: none !important;
+  }
+}

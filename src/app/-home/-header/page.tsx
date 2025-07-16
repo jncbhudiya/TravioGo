@@ -26,15 +26,13 @@ function Header() {
               alt="Logo"
               className="w-[138px] h-[40px]"
             />
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={toggleMenu}
-                className="text-[#EC9105]  focus:outline-none"
-              >
+            <div className="below-800:flex hidden items-center">
+              <button onClick={toggleMenu} className="text-[#EC9105]">
                 <HamburgerIocn />
               </button>
             </div>
-            <ul className="hidden h-[24px] w-[452px] ml-[78px] gap-[30px]  md:flex text-sm font-medium">
+
+            <ul className="below-800:hidden flex h-[24px] w-[452px] ml-[78px] gap-[30px] text-sm font-medium">
               <li className=" w-[45px] font-medium font-[ubuntu] cursor-pointer  hover:text-[#EC9105]  transition-colors duration-200">
                 Home
               </li>
@@ -51,7 +49,7 @@ function Header() {
                 Contact Us
               </li>
             </ul>
-            <div className="hidden  md:flex items-center  gap-[30px] text-sm">
+            <div className="below-800:hidden flex items-center gap-[30px] text-sm">
               <span className="cursor-pointer font-[ubuntu] hover:text-[#EC9105] transition-colors duration-200">
                 USD
               </span>
@@ -64,7 +62,7 @@ function Header() {
             </div>
             {/* Mobile Menu Overlay  */}
             {isMenuOpen && (
-              <div className="fixed inset-y-0 right-0 z-50 w-[280px] bg-white p-6 shadow-lg md:hidden animate-slide-in-right">
+              <div className="fixed inset-y-0 right-0 z-50 w-[280px] bg-white p-6 shadow-lg  animate-slide-in-right">
                 <div
                   className="flex-1 bg-black bg-opacity-50"
                   onClick={toggleMenu}
@@ -140,9 +138,8 @@ function Header() {
             )}
           </nav>
         </div>
-      
 
-        <div className="mt-20 sm:mt-30 md:mt-40 lg:mt-58 font-[ubuntu] text-base/8 leading-8 tracking-wide items-center justify-center px-4 text-center flex flex-col gap-[24px]">
+        <div className="mt-55 sm:mt-30 md:mt-40 lg:mt-58 font-[ubuntu] text-base/8 leading-8 tracking-wide items-center justify-center px-4 text-center flex flex-col gap-[24px]">
           <p className="text-lg md:text-xl font-semibold opacity-75">
             Seamless Booking: 15,000+ Multi-Day Adventures Await
           </p>

@@ -18,10 +18,8 @@ function Populartour() {
 
   return (
     <>
-      <section className="w-full bg-[#FEF5E6] py-16 px-6 md:px-10 lg:px-24 ">
-        <div
-          className="max-w-[1320px] mx-auto space-y-4 mb-0  min-[409px]:mb-[20px] min-[638px]:mb-[20px]"
-        >
+      <section className="w-full bg-[#FEF5E6] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 lg:px-24">
+        <div className="max-w-[1320px] mx-auto space-y-4 mb-0  min-[409px]:mb-[20px] min-[638px]:mb-[20px]">
           {/* Header Section */}
           <Title
             scrollRef={scrollRef}
@@ -31,7 +29,7 @@ function Populartour() {
           />
           {/* Cards Scrollable Container */}
           <div
-            className="flex w-full max-w-[1320px] mx-auto h-[544px] overflow-x-auto   snap-x snap-mandatory no-scrollbar gap-6 pb-4"
+            className="flex w-full max-w-[1320px] mx-auto h-[544px] overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-2 sm:pb-4 md:pb-6 lg:pb-6"
             ref={scrollRef}
           >
             <div className="flex gap-[30px] snap-x snap-mandatory w-max h-max">

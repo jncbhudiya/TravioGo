@@ -23,7 +23,7 @@ export default function TopDestinations() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-w-[1320px] mx-auto lg:justify-between items-stretch">
+      <div className="flex flex-col lg:flex-row flex-wrap gap-6 lg:gap-8 max-w-[1320px] mx-auto justify-between items-stretch">
         {/* First Column */}
         <div className="flex flex-col gap-6 w-full lg:flex-1 lg:min-w-[220px] lg:max-w-[340px]">
           <div className="w-full h-[220px] sm:h-[260px] md:h-[307px]">
