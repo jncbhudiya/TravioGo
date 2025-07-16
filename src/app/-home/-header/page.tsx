@@ -62,76 +62,73 @@ function Header() {
             </div>
             {/* Mobile Menu Overlay  */}
             {isMenuOpen && (
-              <div className="fixed inset-y-0 right-0 z-50 w-[280px] bg-white p-6 shadow-lg  animate-slide-in-right">
+              <div className="fixed inset-y-0 right-0 z-50 w-[280px]  bg-white p-6 shadow-lg  animate-slide-in-right overflow-hidden">
                 <div
                   className="flex-1 bg-black bg-opacity-50"
                   onClick={toggleMenu}
                 />
 
-                <div className="w-[280px] bg-white h-full p-6  flex flex-col justify-between animate-slide-in-right">
-                  <button
-                    onClick={toggleMenu}
-                    className="absolute top-4 right-4 text-[#EC9105]  hover:text-black transition duration-200"
-                  >
-                    <CloseIcon />
-                  </button>
-
-                  <ul className="flex flex-col gap-10  text-lg font-medium text-[#EC9105] mt-12">
-                    {[
-                      {
-                        label: "Home",
-                        icon: <HomeIcon />,
-                      },
-                      {
-                        label: "About Us",
-                        icon: <AboutIcon />,
-                      },
-                      {
-                        label: "Destinations",
-                        icon: <DestinationsIcon />,
-                      },
-                      {
-                        label: "Tours",
-                        icon: <ToursIcon />,
-                      },
-                      {
-                        label: "Contact Us",
-                        icon: <ContactUsIcon />,
-                      },
-                    ].map(({ label, icon }) => (
-                      <li
-                        key={label}
-                        onClick={toggleMenu}
-                        className="cursor-pointer hover:text-gray-800 gap-6 flex items-center transition duration-200"
-                      >
-                        {icon}
-                        {label}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-col gap-4 text-[#EC9105] text-base mb-18">
-                    <div className="flex  gap-12">
-                      <span
-                        className="cursor-pointer hover:text-gray-800"
-                        onClick={toggleMenu}
-                      >
-                        USD
-                      </span>
-                      |
-                      <span
-                        className="cursor-pointer hover:text-gray-800"
-                        onClick={toggleMenu}
-                      >
-                        Sign Up
-                      </span>
-                    </div>
+                <div className="relative w-[280px] h-full flex flex-col justify-between animate-slide-in-right p-[2px] bg-gradient-to-r from-amber-400 to-amber-800 rounded-lg">
+             
+                  <div className="bg-white h-full w-full rounded-[calc(0.5rem-2px)] p-6 flex flex-col justify-between">
                     <button
-                      className="bg-[#EC9105] text-white px-4 py-2  mr-5 rounded-full shadow hover:bg-[#d47f04]"
                       onClick={toggleMenu}
+                      className="absolute top-4 right-8 text-[#EC9105] hover:text-amber-600 transition duration-200"
                     >
-                      Log in
+                      <CloseIcon />
                     </button>
+
+                    <ul className="flex flex-col gap-6 text-lg font-medium text-[#EC9105] mt-12">
+                      {[
+                        {
+                          label: "Home",
+                          icon: <HomeIcon />,
+                        },
+                        {
+                          label: "About Us",
+                          icon: <AboutIcon />,
+                        },
+                        {
+                          label: "Destinations",
+                          icon: <DestinationsIcon />,
+                        },
+                        {
+                          label: "Tours",
+                          icon: <ToursIcon />,
+                        },
+                        {
+                          label: "Contact Us",
+                          icon: <ContactUsIcon />,
+                        },
+                      ].map(({ label, icon }) => (
+                        <li
+                          key={label}
+                          onClick={toggleMenu}
+                          className="cursor-pointer font-[ubuntu] gap-4 flex items-center transition duration-200 border-b border-amber-100 py-3 hover:bg-amber-50 px-2 rounded-md"
+                        >
+                          {icon}
+                          {label}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="p-6 border-t border-amber-100">
+                      <div className="flex justify-between items-center mb-5 text-[#EC9105]">
+                        <button className="font-[ubuntu] hover:text-amber-900 transition-colors">
+                          USD
+                        </button>
+                        <span className="h-6 w-px bg-amber-300"></span>
+                        <button className="font-[ubuntu] hover:text-amber-900 transition-colors">
+                          Sign Up
+                        </button>
+                      </div>
+                      <button
+                        className="w-full py-3 px-6 font-[ubuntu] bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium rounded-full shadow-lg hover:shadow-amber-200/50 hover:from-amber-600 hover:to-amber-700 transition-all duration-300"
+                        onClick={toggleMenu}
+                      >
+                        Log in
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

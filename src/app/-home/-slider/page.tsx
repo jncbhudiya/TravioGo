@@ -5,7 +5,7 @@ import { LeftWhiteArrow, RightArrow } from "@/app/icon/page";
 
 const backgroundImages = [
   "/images/3ce43c80fb00237c348c1fac0865ca7dda7999f2.jpg",
-  "/images/slider3.jpg",
+  "/images/desert.jpg",
   "/images/Traveler-Tips-Nature-Seasons-Weather.jpg",
   "/images/top-nature-spots-near-manila.png",
 ];
