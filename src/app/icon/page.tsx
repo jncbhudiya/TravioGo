@@ -761,7 +761,7 @@ export const Email = () => (
 
 export const User = () => (
   <svg
-    className="h-5 w-5 text-gray-700"
+    className="h-5 w-5 text-[#EC9105]"
     fill="currentColor"
     viewBox="0 0 20 20"
   >
@@ -784,7 +784,7 @@ export const Logout = () => (
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-logout text-gray-700"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-logout text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
@@ -793,4 +793,64 @@ export const Logout = () => (
   </svg>
 );
 
+export const DollarIocn = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-currency-dollar"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
+    <path d="M12 3v3m0 12v3" />
+  </svg>
+);
+
+export const UserAddIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-user-plus text-amber-700"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+    <path d="M16 19h6" />
+    <path d="M19 16v6" />
+    <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+  </svg>
+);
+export const LoginIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-login-2 text-white"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+    <path d="M3 12h13l-3 -3" />
+    <path d="M13 15l3 -3" />
+  </svg>
+);
 // export const DestinationsIcon = () =>()
+
+

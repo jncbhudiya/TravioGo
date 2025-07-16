@@ -4,11 +4,14 @@ import {
   CloseIcon,
   ContactUsIcon,
   DestinationsIcon,
+  DollarIocn,
   HamburgerIocn,
   HomeIcon,
+  LoginIcon,
   Logout,
   ToursIcon,
   User,
+  UserAddIcon,
 } from "@/app/icon/page";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -90,7 +93,7 @@ function Header() {
                     className="flex items-center gap-2 cursor-pointer"
                   >
                     <div className="w-10 h-10 bg-[#EC9105] text-white font-[ubuntu] flex items-center justify-center rounded-full text-lg uppercase">
-                      {user.displayName?.slice(0, 2) || userEmail?.slice(0,1)}
+                      {user.displayName?.slice(0, 2) || userEmail?.slice(0, 1)}
                     </div>
                   </button>
 
@@ -98,7 +101,7 @@ function Header() {
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border-2 border-[#EC9105]">
                       <div className="px-4 py-2 border-b border-[#EC9105]">
                         <p className="flex gap-2 text-sm font-[ubuntu] text-gray-700">
-                          <User /> {user.displayName || "User"}
+                          <User /> {user.displayName || userEmail}
                         </p>
                       </div>
 
@@ -128,71 +131,118 @@ function Header() {
             </div>
             {/* Mobile Menu Overlay  */}
             {isMenuOpen && (
-              <div className="fixed inset-y-0 right-0 z-50 w-[280px]  bg-white p-6 shadow-lg  animate-slide-in-right overflow-hidden">
+              <div className="fixed inset-0 z-50">
+                {/* Overlay */}
                 <div
-                  className="flex-1 bg-black bg-opacity-50"
+                  className="absolute inset-0 w-[0px] bg-black bg-opacity-50 backdrop-blur-sm"
                   onClick={toggleMenu}
                 />
 
-                <div className="relative w-[280px] h-full flex flex-col justify-between animate-slide-in-right p-[2px] bg-gradient-to-r from-amber-400 to-amber-800 rounded-lg">
-                  <div className="bg-white h-full w-full rounded-[calc(0.5rem-2px)] p-6 flex flex-col justify-between">
+                {/* Menu Container */}
+                <div className="absolute inset-y-0 right-0 w-[300px] bg-gradient-to-br from-amber-400 to-amber-600 p-1 shadow-xl animate-slide-in-right">
+                  <div className="relative h-full w-full bg-white rounded-l-lg overflow-hidden flex flex-col">
+                    {/* Close Button */}
                     <button
                       onClick={toggleMenu}
-                      className="absolute top-4 right-8 text-[#EC9105] hover:text-amber-600 transition duration-200"
+                      className="absolute top-5 right-5 p-2 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 transition-all duration-300 shadow-sm"
                     >
                       <CloseIcon />
                     </button>
 
-                    <ul className="flex flex-col gap-6 text-lg font-medium text-[#EC9105] mt-12">
+                    {/* Menu Items */}
+                    <ul className="flex flex-col gap-1 pt-20 px-4">
                       {[
-                        {
-                          label: "Home",
-                          icon: <HomeIcon />,
-                        },
+                        { label: "Home", icon: <HomeIcon />, href: "/" },
                         {
                           label: "About Us",
                           icon: <AboutIcon />,
+                          href: "/about",
                         },
                         {
                           label: "Destinations",
                           icon: <DestinationsIcon />,
+                          href: "/destinations",
                         },
-                        {
-                          label: "Tours",
-                          icon: <ToursIcon />,
-                        },
+                        { label: "Tours", icon: <ToursIcon />, href: "/tours" },
                         {
                           label: "Contact Us",
                           icon: <ContactUsIcon />,
+                          href: "/contact",
                         },
-                      ].map(({ label, icon }) => (
-                        <li
-                          key={label}
-                          onClick={toggleMenu}
-                          className="cursor-pointer font-[ubuntu] gap-4 flex items-center transition duration-200 border-b border-amber-100 py-3 hover:bg-amber-50 px-2 rounded-md"
-                        >
-                          {icon}
-                          {label}
-                        </li>
+                      ].map(({ label, icon, href }) => (
+                        <Link href={href} passHref key={label}>
+                          <li
+                            onClick={toggleMenu}
+                            className="cursor-pointer font-[ubuntu] gap-4 flex items-center py-4 px-4 rounded-lg transition-all duration-300 hover:bg-amber-50 hover:text-amber-700 text-gray-700 hover:pl-6"
+                          >
+                            <span className="text-amber-500">{icon}</span>
+                            <span className="font-medium">{label}</span>
+                          </li>
+                        </Link>
                       ))}
                     </ul>
 
-                    <div className="p-6 border-t border-amber-100">
-                      <div className="flex justify-between items-center mb-5 text-[#EC9105]">
-                        <button className="font-[ubuntu] hover:text-amber-900 transition-colors">
+                    {/* User Section */}
+                    <div className="mt-auto p-6 border-t border-amber-100 bg-gradient-to-t from-amber-50 to-white">
+                      {/* Currency Selector */}
+                      <div className="flex justify-between items-center mb-6">
+                        <button className="flex items-center gap-2 font-[ubuntu] text-amber-700 hover:text-amber-900 transition-colors">
+                          <DollarIocn />
                           USD
                         </button>
+
                         <span className="h-6 w-px bg-amber-300"></span>
-                        <button className="font-[ubuntu] hover:text-amber-900 transition-colors">
-                          Sign Up
-                        </button>
+
+                        {user ? (
+                          <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2 font-[ubuntu] text-amber-700 hover:text-amber-900 transition-colors"
+                          >
+                            <Logout />
+                            Log Out
+                          </button>
+                        ) : (
+                          <Link href="/signup" passHref>
+                            <button
+                              onClick={toggleMenu}
+                              className="flex items-center gap-2 font-[ubuntu] text-amber-700 hover:text-amber-900 transition-colors"
+                            >
+                              <UserAddIcon  />
+                              Sign Up
+                            </button>
+                          </Link>
+                        )}
                       </div>
-                      <button
-                        className="w-full py-3 px-6 font-[ubuntu] bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium rounded-full shadow-lg hover:shadow-amber-200/50 hover:from-amber-600 hover:to-amber-700 transition-all duration-300"
-                        onClick={toggleMenu}
-                      >
-                        Log in
-                      </button>
+
+                      {/* User Profile or Login */}
+                      {user ? (
+                        <div className="flex items-center gap-4 p-4 bg-amber-50 rounded-xl border border-amber-200">
+                          <div className="relative">
+                            <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-amber-700 text-white font-[ubuntu] flex items-center justify-center rounded-full text-lg uppercase shadow-md">
+                              {user.displayName?.slice(0, 2) ||
+                                userEmail?.slice(0, 1)}
+                            </div>
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white"></div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-[ubuntu] font-medium text-gray-800 truncate">
+                              {user.displayName || "Welcome To Travigo"}
+                            </p>
+                         
+                          </div>
+                         
+                        </div>
+                      ) : (
+                        <Link href="/login" passHref>
+                          <button
+                            className="w-full py-4 px-6 font-[ubuntu] bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl shadow-lg hover:shadow-amber-300/50 hover:from-amber-600 hover:to-amber-700 transition-all duration-300 flex items-center justify-center gap-2"
+                            onClick={toggleMenu}
+                          >
+                            <LoginIcon/>
+                            Log in
+                          </button>
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
