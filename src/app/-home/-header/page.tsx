@@ -6,14 +6,18 @@ import {
   DestinationsIcon,
   HamburgerIocn,
   HomeIcon,
+  Logout,
   ToursIcon,
+  User,
 } from "@/app/icon/page";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../../firebase";
+import { auth } from "../../config/firebase";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [user, setUser] = useState<any | null>(null);
 
@@ -37,6 +41,10 @@ function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleProfile = () => {
+    setIsProfileOpen(!isProfileOpen);
   };
   return (
     <>
@@ -76,19 +84,32 @@ function Header() {
                 USD
               </span>
               {user ? (
-                <div className="flex items-center gap-4">
-                  {/* User Initial Circle - using displayName (username) */}
-                  <div className="w-10 h-10 bg-[#EC9105] text-white font-[ubuntu] flex items-center justify-center rounded-full text-lg uppercase">
-                    {user.displayName?.slice(0, 2) || "US"}
-                  </div>
-
-                  {/* Logout Button */}
+                <div className="relative">
                   <button
-                    onClick={handleLogout}
-                    className="text-sm text-red-600 font-[ubuntu] hover:underline transition-colors duration-200"
+                    onClick={toggleProfile}
+                    className="flex items-center gap-2 cursor-pointer"
                   >
-                    Logout
+                    <div className="w-10 h-10 bg-[#EC9105] text-white font-[ubuntu] flex items-center justify-center rounded-full text-lg uppercase">
+                      {user.displayName?.slice(0, 2) || userEmail?.slice(0,1)}
+                    </div>
                   </button>
+
+                  {isProfileOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border-2 border-[#EC9105]">
+                      <div className="px-4 py-2 border-b border-[#EC9105]">
+                        <p className="flex gap-2 text-sm font-[ubuntu] text-gray-700">
+                          <User /> {user.displayName || "User"}
+                        </p>
+                      </div>
+
+                      <button
+                        onClick={handleLogout}
+                        className="flex gap-2  w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
+                      >
+                        <Logout /> Log Out
+                      </button>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <>
