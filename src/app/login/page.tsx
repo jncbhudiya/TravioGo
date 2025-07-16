@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import { auth } from "../config/firebase";
 import { Email, Lock } from "../icon/page";
+import Link from "next/link";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,11 +31,13 @@ function Login() {
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
         <div className="bg-gradient-to-r from-[#EC9105] to-[#ffb74d] p-6 text-center">
           <div className="flex justify-center mb-2">
-            <img
-              src="/images/Logo.png"
-              alt="Travel Logo"
-              className="w-40 h-auto object-contain"
-            />
+            <Link href="/" passHref>
+              <img
+                src="/images/Logo.png"
+                alt="Travel Logo"
+                className="w-40 h-auto object-contain"
+              />
+            </Link>
           </div>
           <h1 className="text-2xl font-bold text-white font-[ubuntu]">Login</h1>
         </div>
@@ -106,7 +109,7 @@ function Login() {
 
               <div className="text-sm">
                 <a
-                  href="#"
+                  href="/forgot-password"
                   className="font-medium text-[#EC9105] hover:text-[#d47f04] font-[ubuntu]"
                 >
                   Forgot password?

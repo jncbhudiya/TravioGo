@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { auth } from "../../firebase";
+import { auth } from "../config/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { Email, Lock, User } from "../icon/page";
+import Link from "next/link";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -45,11 +46,13 @@ function Signup() {
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
         <div className="bg-gradient-to-r from-[#EC9105] to-[#ffb74d] p-6 text-center">
           <div className="flex justify-center mb-4">
-            <img
-              src="/images/Logo.png"
-              alt="Travel Logo"
-              className="w-40 h-auto object-contain"
-            />
+            <Link href="/" passHref>
+              <img
+                src="/images/Logo.png"
+                alt="Travel Logo"
+                className="w-40 h-auto object-contain"
+              />
+            </Link>
           </div>
           <h1 className="text-2xl font-bold text-white font-[ubuntu]">
             Sign Up
