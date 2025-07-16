@@ -4,18 +4,20 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
-import { Email, Lock } from "../icon/page";
+import { Email, Eye, EyeOff, Lock } from "../icon/page";
 import Link from "next/link";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorMsg(""); 
+    setErrorMsg("");
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -71,26 +73,32 @@ function Login() {
               </div>
             </div>
 
-            <div>
+            <div className="space-y-1">
               <label className="block text-sm font-medium text-gray-700 mb-1 font-[ubuntu]">
                 Password
               </label>
-              <div className="relative">
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-amber-500 group-focus-within:text-amber-700">
+                  <Lock />
+                </div>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
+                  className="w-full pl-10 pr-10 py-3 border border-gray-300 font-[ubuntu] text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
                   placeholder="••••••••"
                   required
                 />
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <Lock />
-                </div>
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 flex items-center pr-3 text-amber-500 hover:text-amber-700"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOff /> : <Eye />}
+                </button>
               </div>
             </div>
-
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
