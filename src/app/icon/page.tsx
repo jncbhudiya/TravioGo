@@ -736,7 +736,7 @@ export const ContactUsIcon = () => (
 
 export const Lock = () => (
   <svg
-    className="h-5 w-5 text-gray-400"
+    className="h-5 w-5 text-[#EC9105]"
     fill="currentColor"
     viewBox="0 0 20 20"
   >
@@ -750,7 +750,7 @@ export const Lock = () => (
 
 export const Email = () => (
   <svg
-    className="h-5 w-5 text-gray-400"
+    className="h-5 w-5 text-[#EC9105]"
     fill="currentColor"
     viewBox="0 0 20 20"
   >
