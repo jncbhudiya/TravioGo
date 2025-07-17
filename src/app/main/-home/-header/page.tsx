@@ -15,32 +15,59 @@ import {
   UserAddIcon,
 } from "@/assets/icon/page";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
+
 import { auth } from "@/config/firebase";
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [isEditOpen, setIsEditOpen] = useState(false);
   const [user, setUser] = useState<any | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const profileRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        setUserEmail(user.email ?? null);
-      } else {
-        setUser(null);
-        setUserEmail(null);
-      }
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setUserEmail(currentUser?.email ?? null);
     });
-
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(e.target as Node)
+      ) {
+        setIsProfileOpen(false);
+      }
+    };
+    if (isProfileOpen)
+      document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isProfileOpen]);
+
   const handleLogout = () => {
     signOut(auth);
     setUser(null);
+  };
+
+  const handleProfileUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const newName = nameRef.current?.value;
+    if (!newName || !auth.currentUser) return;
+    try {
+      await updateProfile(auth.currentUser, { displayName: newName });
+      setUser({ ...auth.currentUser });
+      setIsEditOpen(false);
+    } catch (err) {
+      console.error("Update failed:", err);
+    }
   };
 
   const toggleMenu = () => {
@@ -58,7 +85,7 @@ function Header() {
             <img
               src="/images/Logo.png"
               alt="Logo"
-              className="w-[138px] h-[40px]"
+              className="w-[138px] h-[40px] z-[9999]"
             />
             <div className="below-800:flex hidden items-center">
               <button onClick={toggleMenu} className="text-[#EC9105]">
@@ -83,6 +110,7 @@ function Header() {
                 Contact Us
               </li>
             </ul>
+
             <div className="below-800:hidden flex items-center gap-[30px] text-sm">
               <span className="cursor-pointer font-[ubuntu] hover:text-[#EC9105] transition-colors duration-200">
                 USD
@@ -99,20 +127,25 @@ function Header() {
                   </button>
 
                   {isProfileOpen && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border-2 border-[#EC9105]">
+                    <div
+                      ref={profileRef}
+                      className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border-2 border-[#EC9105]"
+                    >
                       <div className="px-4 py-2 border-b border-[#EC9105]">
                         <p className="flex gap-2 text-sm font-[ubuntu] text-gray-700">
                           <User /> {user.displayName || userEmail}
                         </p>
                       </div>
                       <button
-                        className="flex gap-2  w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
+                        onClick={() => setIsEditOpen(true)}
+                        className="flex gap-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
                       >
-                        <Edit />Edit Profile
+                        <Edit />
+                        Edit Profile
                       </button>
                       <button
                         onClick={handleLogout}
-                        className="flex gap-2  w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
+                        className="flex gap-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
                       >
                         <Logout /> Log Out
                       </button>
@@ -265,6 +298,57 @@ function Header() {
           </h1>
         </div>
       </div>
+      {isEditOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center  bg-opacity-50">
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative border border-[#EC9105]">
+            <button
+              onClick={() => setIsEditOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
+            >
+              <CloseIcon />
+            </button>
+
+            <h2 className="text-xl font-bold mb-4 font-[ubuntu]">
+              Edit Profile
+            </h2>
+            <form className="space-y-4" onSubmit={handleProfileUpdate}>
+              <div>
+                <label className="block text-sm font-[ubuntu] text-gray-600 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  ref={nameRef}
+                  className="w-full border text-black border-gray-300 rounded-md px-4 py-2 font-[ubuntu] focus:ring-[#EC9105] focus:outline-none"
+                  placeholder="Enter your name"
+                  defaultValue={user?.displayName || ""}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-[ubuntu] text-gray-600 mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  disabled
+                  value={userEmail || ""}
+                  className="w-full border border-gray-200 bg-gray-100 text-gray-500 rounded-md px-4 py-2 font-[ubuntu] cursor-not-allowed"
+                />
+              </div>
+
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05] text-white font-bold py-2 px-6 rounded-md hover:opacity-90 font-[ubuntu]"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
