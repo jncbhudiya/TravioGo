@@ -2,46 +2,48 @@
 
 import React, { useState } from "react";
 import { auth, googleProvider } from "../../../config/firebase";
-import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  updateProfile,
+} from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { Email, Google, Lock, User } from "../../../assets/icon/page";
 import Link from "next/link";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { setUser, setError, setLoading, clearError } from "../../../store/authslice";
-import { useAppSelector } from "@/hooks/useAppSelector";
+import { setUser, setError, setLoading } from "../../../store/authslice";
+import { InputField } from "../../commoncomponent/InputField";
+import toast from "react-hot-toast";
 
 function Signup() {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const router = useRouter();
-  const dispatch = useAppDispatch();
-  const globalError = useAppSelector((state) => state.auth.error);
 
+  const validateForm = () => {
+    if (password !== confirmPassword) return "Passwords do not match";
+    if (password.length < 8) return "Password must be at least 8 characters";
+    if (!email.includes("@") || !email.includes("."))
+      return "Please enter a valid email address";
+    return null;
+  };
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setError(""));
     dispatch(setLoading(true));
 
-    // Validate inputs
-    if (password !== confirmPassword) {
-      dispatch(setError("Passwords do not match"));
+    const validationError = validateForm();
+    if (validationError) {
+      toast.error(validationError);
       dispatch(setLoading(false));
       return;
     }
 
-    if (password.length < 8) {
-      dispatch(setError("Password must be at least 8 characters"));
-      dispatch(setLoading(false));
-      return;
-    }
-
-    if (!email.includes("@") || !email.includes(".")) {
-      dispatch(setError("Please enter a valid email address"));
-      dispatch(setLoading(false));
-      return;
-    }
+    const toastId = toast.loading("Creating account...");
 
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -50,99 +52,86 @@ function Signup() {
         password
       );
 
-      // Update user profile with display name
       if (userCredential.user) {
-        await updateProfile(userCredential.user, {
-          displayName: username,
-        });
-
-        // Refresh user to get updated profile
+        await updateProfile(userCredential.user, { displayName: username });
         await userCredential.user.reload();
 
         dispatch(setUser(userCredential.user));
+        toast.success("Account created successfully!", { id: toastId });
         router.push("/");
       }
     } catch (error: any) {
       let errorMessage = "Signup failed. Please try again.";
-
-      // Handle specific Firebase errors
-      if (error.code) {
-        switch (error.code) {
-          case "auth/email-already-in-use":
-            errorMessage = "Email is already in use.";
-            console.log("Email is already in use.");
-            break;
-          case "auth/invalid-email":
-            errorMessage = "Invalid email address.";
-            console.log("Invalid email address.");
-            break;
-          case "auth/operation-not-allowed":
-            errorMessage = "Email/password accounts are not enabled.";
-            console.log("Email/password accounts are not enabled.");
-            break;
-          case "auth/weak-password":
-            errorMessage = "Password is too weak.";
-            console.log("Password is too weak.");
-            break;
-          default:
-            errorMessage = error.message || errorMessage;
-            console.log("This is Default Error.")
-        }
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          errorMessage = "Email is already in use.";
+          break;
+        case "auth/invalid-email":
+          errorMessage = "Invalid email address.";
+          break;
+        case "auth/operation-not-allowed":
+          errorMessage = "Email/password accounts are not enabled.";
+          break;
+        case "auth/weak-password":
+          errorMessage = "Password is too weak.";
+          break;
+        default:
+          errorMessage = error.message || errorMessage;
       }
 
+      toast.error(errorMessage, { id: toastId });
       dispatch(setError(errorMessage));
       console.error("Signup Error:", error);
     } finally {
       dispatch(setLoading(false));
     }
-    
   };
 
-   const handleGoogleSignup = async () => {
-     dispatch(setError(""));
-     dispatch(setLoading(true));
+  const handleGoogleSignup = async () => {
+    dispatch(setError(""));
+    dispatch(setLoading(true));
+    const toastId = toast.loading("Signing up with Google...");
 
-     try {
-       const result = await signInWithPopup(auth, googleProvider);
-       const user = result.user;
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
 
-       dispatch(
-         setUser({
-           uid: user.uid,
-           email: user.email,
-           displayName: user.displayName,
-         })
-       );
+      dispatch(
+        setUser({
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+        })
+      );
 
-       router.push("/");
-     } catch (error: any) {
-       let errorMessage = "Google signup failed. Please try again.";
+      toast.success("Google signup successful!", { id: toastId });
+      router.push("/");
+    } catch (error: any) {
+      let errorMessage = "Google signup failed. Please try again.";
+      switch (error.code) {
+        case "auth/account-exists-with-different-credential":
+          errorMessage = "Account exists with different sign-in method.";
+          break;
+        case "auth/popup-closed-by-user":
+          errorMessage = "Signup popup was closed.";
+          break;
+        default:
+          errorMessage = error.message || errorMessage;
+      }
 
-       if (error.code) {
-         switch (error.code) {
-           case "auth/account-exists-with-different-credential":
-             errorMessage =
-               "An account already exists with the same email but different sign-in method.";
-             break;
-           case "auth/popup-closed-by-user":
-             errorMessage = "Signup popup was closed before completing.";
-             break;
-           default:
-             errorMessage = error.message || errorMessage;
-         }
-       }
+      toast.error(errorMessage, { id: toastId });
+      dispatch(setError(errorMessage));
+      console.error("Google Signup Error:", error);
+    } finally {
+      dispatch(setLoading(false));
+    }
+  };
 
-       dispatch(setError(errorMessage));
-       console.error("Google Signup Error:", error);
-     } finally {
-       dispatch(setLoading(false));
-     }
-   };
-  
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FEF5E6] p-4">
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
-        <div className="bg-gradient-to-r from-[#EC9105] to-[#ffb74d] p-6 text-center">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05]  p-6 text-center">
           <div className="flex justify-center mb-4">
             <Link href="/" passHref>
               <img
@@ -152,117 +141,78 @@ function Signup() {
               />
             </Link>
           </div>
-          <h1 className="text-2xl font-bold text-white font-[ubuntu]">
-            Sign Up
+          <h1 className="text-3xl tracking-wide font-extrabold text-white font-[ubuntu]">
+            Create Your Travel Account
           </h1>
         </div>
 
-        {/* Form section */}
+        {/* Form */}
         <div className="p-8">
-          {globalError && (
-            <div className="bg-red-50 border-l-4 border-red-500 p-3 mb-6 rounded">
-              <p className="text-red-700 font-medium text-sm">{globalError}</p>
-            </div>
-          )}
-
           <form onSubmit={handleSignup} className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1 font-[ubuntu]">
-                Username
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
-                  placeholder="e.g. travel_lover"
-                  required
-                />
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <User />
-                </div>
-              </div>
-            </div>
+            <InputField
+              label="Username"
+              type="text"
+              icon={<User />}
+              value={username}
+              onChange={setUsername}
+              placeholder="e.g. travel_lover"
+            />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1 font-[ubuntu]">
-                Email
-              </label>
-              <div className="relative">
-                <input
-                  type="email"
-                  autoComplete="username"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
-                  placeholder="your@email.com"
-                  required
-                />
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <Email />
-                </div>
-              </div>
-            </div>
+            {/* Email */}
+            <InputField
+              label="Email"
+              type="email"
+              icon={<Email />}
+              value={email}
+              onChange={setEmail}
+              placeholder="your@email.com"
+            />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1 font-[ubuntu]">
-                Password
-              </label>
-              <div className="relative">
-                <input
-                  type="password"
-                  autoComplete="new-password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
-                  placeholder="•••••••"
-                  required
-                />
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <Lock />
-                </div>
-              </div>
-            </div>
+            {/* Password */}
+            <InputField
+              label="Password"
+              type="password"
+              icon={<Lock />}
+              value={password}
+              onChange={setPassword}
+              placeholder="•••••••"
+            />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1 font-[ubuntu]">
-                Confirm Password
-              </label>
-              <div className="relative">
-                <input
-                  type="password"
-                  autoComplete="new-password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
-                  placeholder="•••••••"
-                  required
-                />
-              </div>
-            </div>
+            {/* Confirm Password */}
+            <InputField
+              label="Confirm Password"
+              type="password"
+              value={confirmPassword}
+              onChange={setConfirmPassword}
+              placeholder="•••••••"
+            />
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#EC9105] to-[#ffb74d] text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90"
+              className="w-full bg-gradient-to-r from-[#EC9105] to-[#FBBC05]  text-white font-bold py-3 px-4 rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:opacity-90"
             >
               Create Account
             </button>
 
-            <div className="flex items-center mb-6">
+            {/* OR Divider */}
+            <div className="flex items-center my-3">
               <div className="flex-grow border-t border-gray-300"></div>
-              <span className="mx-4 text-gray-500 text-sm font-medium">OR</span>
+              <span className="mx-2 text-gray-500 text-sm font-medium">OR</span>
               <div className="flex-grow border-t border-gray-300"></div>
             </div>
+
+            {/* Google Signup */}
             <button
+              type="button"
               onClick={handleGoogleSignup}
-              className="w-full flex items-center justify-center gap-2 text-white bg-gradient-to-r from-[#EC9105] to-[#ffb74d] font-bold py-3 px-4 rounded-full shadow hover:shadow-md transition-all duration-300 mb-6"
+              className="w-full flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#EC9105] to-[#FBBC05] font-semibold py-3 px-4 rounded-full shadow hover:shadow-md transition duration-300"
             >
               <Google />
               <span>Sign up with Google</span>
             </button>
           </form>
 
+          {/* Login Link */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600 font-[ubuntu]">
               Already have an account?{" "}
