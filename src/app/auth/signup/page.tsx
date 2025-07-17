@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { auth } from "../../../config/firebase";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, googleProvider } from "../../../config/firebase";
+import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { Email, Lock, User } from "../../../assets/icon/page";
+import { Email, Google, Lock, User } from "../../../assets/icon/page";
 import Link from "next/link";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { setUser, setError, setLoading, clearError } from "../../../store/authslice";
@@ -96,6 +96,47 @@ function Signup() {
     }
     
   };
+
+   const handleGoogleSignup = async () => {
+     dispatch(setError(""));
+     dispatch(setLoading(true));
+
+     try {
+       const result = await signInWithPopup(auth, googleProvider);
+       const user = result.user;
+
+       dispatch(
+         setUser({
+           uid: user.uid,
+           email: user.email,
+           displayName: user.displayName,
+         })
+       );
+
+       router.push("/");
+     } catch (error: any) {
+       let errorMessage = "Google signup failed. Please try again.";
+
+       if (error.code) {
+         switch (error.code) {
+           case "auth/account-exists-with-different-credential":
+             errorMessage =
+               "An account already exists with the same email but different sign-in method.";
+             break;
+           case "auth/popup-closed-by-user":
+             errorMessage = "Signup popup was closed before completing.";
+             break;
+           default:
+             errorMessage = error.message || errorMessage;
+         }
+       }
+
+       dispatch(setError(errorMessage));
+       console.error("Google Signup Error:", error);
+     } finally {
+       dispatch(setLoading(false));
+     }
+   };
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FEF5E6] p-4">
@@ -174,7 +215,7 @@ function Signup() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
-                  placeholder="••••••••"
+                  placeholder="•••••••"
                   required
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -194,7 +235,7 @@ function Signup() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 font-[ubuntu] text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#EC9105]"
-                  placeholder="••••••••"
+                  placeholder="•••••••"
                   required
                 />
               </div>
@@ -205,6 +246,14 @@ function Signup() {
               className="w-full bg-gradient-to-r from-[#EC9105] to-[#ffb74d] text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90"
             >
               Create Account
+            </button>
+
+            <button
+              onClick={handleGoogleSignup}
+              className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-full shadow hover:shadow-md transition-all duration-300 mb-6"
+            >
+              <Google  />
+              <span>Sign up with Google</span>
             </button>
           </form>
 
