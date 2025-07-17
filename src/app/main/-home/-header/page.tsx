@@ -20,6 +20,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 
 import { auth } from "@/config/firebase";
+import toast from "react-hot-toast";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +67,7 @@ function Header() {
       setUser({ ...auth.currentUser });
       setIsEditOpen(false);
     } catch (err) {
-      console.error("Update failed:", err);
+       toast.error("Update failed");
     }
   };
 
@@ -218,6 +219,13 @@ function Header() {
                           </li>
                         </Link>
                       ))}
+                      <div
+                        onClick={() => setIsEditOpen(true)}
+                        className="flex gap-4 w-full text-left px-4 py-2  font-medium text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
+                      >
+                        <Edit />
+                        Edit Profile
+                      </div>
                     </ul>
 
                     {/* User Section */}
@@ -260,7 +268,7 @@ function Header() {
                               {user.displayName?.slice(0, 2) ||
                                 userEmail?.slice(0, 1)}
                             </div>
-                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white"></div>
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-700 rounded-full border-2 border-white"></div>
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="font-[ubuntu] font-medium text-gray-800 truncate">

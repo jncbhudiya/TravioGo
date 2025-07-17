@@ -116,7 +116,7 @@ function Login() {
               </label>
 
               <Link
-                href="/forgot-password"
+                href="/auth/forgot-password"
                 className="text-sm font-medium text-[#EC9105] hover:text-[#d47f04] font-[ubuntu]"
               >
                 Forgot password?
