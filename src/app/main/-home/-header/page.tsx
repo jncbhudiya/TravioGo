@@ -5,6 +5,7 @@ import {
   ContactUsIcon,
   DestinationsIcon,
   DollarIocn,
+  Edit,
   HamburgerIocn,
   HomeIcon,
   LoginIcon,
@@ -104,7 +105,11 @@ function Header() {
                           <User /> {user.displayName || userEmail}
                         </p>
                       </div>
-
+                      <button
+                        className="flex gap-2  w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
+                      >
+                        <Edit />Edit Profile
+                      </button>
                       <button
                         onClick={handleLogout}
                         className="flex gap-2  w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-[ubuntu]"
@@ -207,7 +212,7 @@ function Header() {
                               onClick={toggleMenu}
                               className="flex items-center gap-2 font-[ubuntu] text-amber-700 hover:text-amber-900 transition-colors"
                             >
-                              <UserAddIcon  />
+                              <UserAddIcon />
                               Sign Up
                             </button>
                           </Link>
@@ -228,9 +233,7 @@ function Header() {
                             <p className="font-[ubuntu] font-medium text-gray-800 truncate">
                               {user.displayName || "Welcome To Travigo"}
                             </p>
-                         
                           </div>
-                         
                         </div>
                       ) : (
                         <Link href="auth/login" passHref>
@@ -238,7 +241,7 @@ function Header() {
                             className="w-full py-4 px-6 font-[ubuntu] bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl shadow-lg hover:shadow-amber-300/50 hover:from-amber-600 hover:to-amber-700 transition-all duration-300 flex items-center justify-center gap-2"
                             onClick={toggleMenu}
                           >
-                            <LoginIcon/>
+                            <LoginIcon />
                             Log in
                           </button>
                         </Link>

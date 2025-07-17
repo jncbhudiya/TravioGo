@@ -163,8 +163,8 @@ function Login() {
 
             <div className="mt-6 text-center">
               <a
-                href="/signup"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all font-[ubuntu]"
+                href="/auth/signup"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-[#EC9105] to-[#ffb74d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all font-[ubuntu]"
               >
                 Create your Travel account
               </a>

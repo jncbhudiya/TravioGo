@@ -248,11 +248,16 @@ function Signup() {
               Create Account
             </button>
 
+            <div className="flex items-center mb-6">
+              <div className="flex-grow border-t border-gray-300"></div>
+              <span className="mx-4 text-gray-500 text-sm font-medium">OR</span>
+              <div className="flex-grow border-t border-gray-300"></div>
+            </div>
             <button
               onClick={handleGoogleSignup}
-              className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-full shadow hover:shadow-md transition-all duration-300 mb-6"
+              className="w-full flex items-center justify-center gap-2 text-white bg-gradient-to-r from-[#EC9105] to-[#ffb74d] font-bold py-3 px-4 rounded-full shadow hover:shadow-md transition-all duration-300 mb-6"
             >
-              <Google  />
+              <Google />
               <span>Sign up with Google</span>
             </button>
           </form>
@@ -260,12 +265,12 @@ function Signup() {
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600 font-[ubuntu]">
               Already have an account?{" "}
-              <a
-                href="/login"
+              <Link
+                href="/auth/login"
                 className="font-semibold text-[#EC9105] hover:text-[#d47f04] transition-colors"
               >
                 Log In
-              </a>
+              </Link>
             </p>
           </div>
         </div>
