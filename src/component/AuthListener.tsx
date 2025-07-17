@@ -12,12 +12,12 @@ export default function AuthListener() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
-        // Extract only the needed properties
+
         const userData = {
           uid: firebaseUser.uid,
           email: firebaseUser.email,
           displayName: firebaseUser.displayName,
-          // Add other properties you need
+       
         };
         dispatch(setUser(userData));
       } else {

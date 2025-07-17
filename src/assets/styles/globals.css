@@ -24,22 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-/* Hide scrollbar in all modern browsers */
+
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
-
-
-/* @media (min-width: 992px) and (max-width: 1199px) {
-  .hide-arrows {
-    display: none !important;
-  }
-} */
-
 
 @media (min-width: 10px) and (max-width: 1199px) {
   .hide-arrows-lg {
@@ -56,7 +49,6 @@ body {
 }
 
 
-/* globals.css */
 @media (max-width: 900px) {
   .below-800\:flex {
     display: flex !important;

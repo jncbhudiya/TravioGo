@@ -6,7 +6,7 @@ import authReducer from "./authslice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth"], // only auth will be persisted
+  whitelist: ["auth"], 
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
@@ -24,6 +24,5 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -22,7 +22,7 @@ const ubuntu = Ubuntu({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-ubuntu", // If using a variable
+  variable: "--font-ubuntu", 
 });
 export default function RootLayout({
   children,

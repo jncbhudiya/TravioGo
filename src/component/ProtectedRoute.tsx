@@ -16,7 +16,7 @@ export default function ProtectedRoute({
 
   useEffect(() => {
     if (!user) {
-      router.push("/login");
+      router.push("auth/login");
     }
   }, [user, router]);
 
