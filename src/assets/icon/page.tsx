@@ -892,21 +892,25 @@ export const EyeOff = () => (
 );
 
 export const Google = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    className="icon icon-tabler icons-tabler-outline icon-tabler-brand-google"
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M20.945 11a9 9 0 1 1 -3.284 -5.997l-2.655 2.392a5.5 5.5 0 1 0 2.119 6.605h-4.125v-3h7.945z" />
-  </svg>
+    <svg width="20" height="20" viewBox="0 0 48 48">
+      <path
+        fill="#EA4335"
+        d="M24 9.5c3.54 0 6.68 1.23 9.15 3.63l6.85-6.85C35.14 2.88 29.96 0 24 0 14.83 0 7.02 5.34 3.24 13.11l8.3 6.44C13.35 13.41 18.3 9.5 24 9.5z"
+      />
+      <path
+        fill="#4285F4"
+        d="M46.1 24.5c0-1.64-.15-3.21-.42-4.72H24v9.04h12.4c-.54 2.87-2.17 5.3-4.6 6.95l7.15 5.55C43.76 37.24 46.1 31.3 46.1 24.5z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M11.54 28.15A14.48 14.48 0 0 1 9.5 24c0-1.45.25-2.84.7-4.15L1.9 13.11A23.96 23.96 0 0 0 0 24c0 3.98.97 7.72 2.7 11l8.84-6.85z"
+      />
+      <path
+        fill="#34A853"
+        d="M24 48c6.48 0 11.9-2.14 15.87-5.83l-7.32-5.68c-2.12 1.42-4.84 2.26-8.55 2.26-5.67 0-10.48-3.82-12.2-9.03l-8.84 6.85C7.12 43.24 14.99 48 24 48z"
+      />
+      <path fill="none" d="M0 0h48v48H0z" />
+    </svg>
 );
 
 export const Edit = () => (

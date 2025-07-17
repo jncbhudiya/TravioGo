@@ -8,16 +8,17 @@ import { Email, Google, Lock, User } from "../../../assets/icon/page";
 import Link from "next/link";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { setUser, setError, setLoading, clearError } from "../../../store/authslice";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
   const router = useRouter();
   const dispatch = useAppDispatch();
-  
+  const globalError = useAppSelector((state) => state.auth.error);
+
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setError(""));
@@ -30,8 +31,8 @@ function Signup() {
       return;
     }
 
-    if (password.length < 6) {
-      dispatch(setError("Password must be at least 6 characters"));
+    if (password.length < 8) {
+      dispatch(setError("Password must be at least 8 characters"));
       dispatch(setLoading(false));
       return;
     }
@@ -158,9 +159,9 @@ function Signup() {
 
         {/* Form section */}
         <div className="p-8">
-          {errorMsg && (
+          {globalError && (
             <div className="bg-red-50 border-l-4 border-red-500 p-3 mb-6 rounded">
-              <p className="text-red-700 font-medium text-sm">{errorMsg}</p>
+              <p className="text-red-700 font-medium text-sm">{globalError}</p>
             </div>
           )}
 
