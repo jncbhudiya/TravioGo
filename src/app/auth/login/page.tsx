@@ -52,7 +52,7 @@ function Login() {
     <div className="min-h-screen flex items-center justify-center bg-[#FEF5E6] p-4">
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#EC9105] to-[#ffb74d] p-6 text-center">
+        <div className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05] p-6 text-center">
           <div className="flex justify-center mb-2">
             <Link href="/" passHref>
               <img
@@ -67,12 +67,6 @@ function Login() {
 
         {/* Form section */}
         <div className="p-8">
-          {errorMsg && (
-            <div className="bg-red-50 border-l-4 border-red-500 p-3 mb-6 rounded">
-              <p className="text-red-700 font-medium text-sm">{errorMsg}</p>
-            </div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email Field */}
             <InputField
@@ -133,7 +127,7 @@ function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-[#EC9105] to-[#ffb74d] text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90 disabled:opacity-50"
+              className="w-full bg-gradient-to-r from-[#EC9105] to-[#FBBC05] text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90 disabled:opacity-50"
             >
               {isLoading ? "Logging in..." : "Log In"}
             </button>
@@ -155,7 +149,7 @@ function Login() {
           <div className="mt-6 text-center">
             <Link
               href="/auth/signup"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-[#EC9105] to-[#ffb74d] hover:shadow-md font-[ubuntu] transition-all"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-[#EC9105] to-[#FBBC05] hover:shadow-md font-[ubuntu] transition-all"
             >
               Create your Travel account
             </Link>
