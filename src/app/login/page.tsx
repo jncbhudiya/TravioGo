@@ -6,25 +6,40 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { Email, Eye, EyeOff, Lock } from "../icon/page";
 import Link from "next/link";
+import { clearError, setError, setLoading, setUser } from "@/store/authslice";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
+  const dispatch = useAppDispatch();
+  const { error: errorMsg, isLoading } = useSelector(
+    (state: RootState) => state.auth
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorMsg("");
+    dispatch(clearError());
+    dispatch(setLoading(true));
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      dispatch(setUser(userCredential.user));
       router.push("/");
-    } catch (error) {
-      setErrorMsg("Invalid credentials. Please try again or sign up.");
+    } catch (error: any) {
+      dispatch(setError("Invalid credentials. Please try again or sign up."));
       console.error("Login Error:", error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 

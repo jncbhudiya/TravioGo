@@ -6,6 +6,8 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { Email, Lock, User } from "../icon/page";
 import Link from "next/link";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { setUser, setError, setLoading, clearError } from "../../store/authslice";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -14,13 +16,29 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const router = useRouter();
-
+  const dispatch = useAppDispatch();
+  
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorMsg("");
+    dispatch(setError(""));
+    dispatch(setLoading(true));
 
+    // Validate inputs
     if (password !== confirmPassword) {
-      setErrorMsg("Passwords do not match");
+      dispatch(setError("Passwords do not match"));
+      dispatch(setLoading(false));
+      return;
+    }
+
+    if (password.length < 6) {
+      dispatch(setError("Password must be at least 6 characters"));
+      dispatch(setLoading(false));
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      dispatch(setError("Please enter a valid email address"));
+      dispatch(setLoading(false));
       return;
     }
 
@@ -31,16 +49,52 @@ function Signup() {
         password
       );
 
-      await updateProfile(userCredential.user, {
-        displayName: username,
-      });
+      // Update user profile with display name
+      if (userCredential.user) {
+        await updateProfile(userCredential.user, {
+          displayName: username,
+        });
 
-      router.push("/");
+        // Refresh user to get updated profile
+        await userCredential.user.reload();
+
+        dispatch(setUser(userCredential.user));
+        router.push("/");
+      }
     } catch (error: any) {
-      setErrorMsg(error.message);
+      let errorMessage = "Signup failed. Please try again.";
+
+      // Handle specific Firebase errors
+      if (error.code) {
+        switch (error.code) {
+          case "auth/email-already-in-use":
+            errorMessage = "Email is already in use.";
+            console.log("Email is already in use.");
+            break;
+          case "auth/invalid-email":
+            errorMessage = "Invalid email address.";
+            console.log("Invalid email address.");
+            break;
+          case "auth/operation-not-allowed":
+            errorMessage = "Email/password accounts are not enabled.";
+            console.log("Email/password accounts are not enabled.");
+            break;
+          case "auth/weak-password":
+            errorMessage = "Password is too weak.";
+            console.log("Password is too weak.");
+            break;
+          default:
+            errorMessage = error.message || errorMessage;
+            console.log("This is Default Error.")
+        }
+      }
+
+      dispatch(setError(errorMessage));
+      console.error("Signup Error:", error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FEF5E6] p-4">
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
