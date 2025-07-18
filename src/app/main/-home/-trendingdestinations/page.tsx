@@ -2,8 +2,8 @@
 
 import { BlackCrossRightArrow } from "@/assets/icon/page";
 import React, { useRef } from "react";
-import Arrow from "../commoncomponent/-arrow/page";
 import Title from "../commoncomponent/-title/page";
+import Image from "next/image";
 
 const trending = [
   { city: "Tokyo", image: "/images/tokyo.png" },
@@ -22,12 +22,10 @@ export default function Trendingdestinations() {
   return (
     <section className="w-full bg-[#FEF5E6] py-16 px-6 md:px-10 lg:px-24 ">
       <div className="max-w-[1320px] mx-auto  space-y-4  ">
-        {/* Use Title and pass scrollRef */}
-        <div
-          className="relative w-full block mt-[70px] sm:mt-[70px] md:mt-[55px]"
-        >
+      
+        <div className="relative w-full block mt-[70px] sm:mt-[70px] md:mt-[55px]">
           <Title
-            scrollRef={scrollRef} 
+            scrollRef={scrollRef}
             title="Trending Destinations"
             description="Immerse yourself in the vibrant culture of trending destinations. Discover hidden gems, delectable cuisine, and unforgettable experiences."
           />
@@ -43,11 +41,15 @@ export default function Trendingdestinations() {
               className="w-[180px] h-[300px] flex flex-col items-center gap-4 group flex-shrink-0"
             >
               <div className="w-[180px] h-[260px] rounded-[8100px] overflow-hidden shadow-md relative">
-                <img
-                  src={item.image}
-                  alt={item.city}
-                  className="w-full h-full object-cover transition duration-300 group-hover:brightness-50"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={item.image}
+                    alt={item.city}
+                    fill
+                    className="object-cover transition duration-300 group-hover:brightness-50"
+                  />
+                </div>
+
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <div className="w-10 h-10 rounded-full border border-[#FFFFFF] flex items-center justify-center">
                     <BlackCrossRightArrow />

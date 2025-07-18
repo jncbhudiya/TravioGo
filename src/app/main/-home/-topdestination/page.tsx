@@ -5,6 +5,7 @@ import DestinationCard from "./destinationcard";
 import { destinations } from "./topdestination";
 import { RightArrow } from "@/assets/icon/page";
 
+
 export default function TopDestinations() {
   return (
     <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-24 ">
@@ -17,7 +18,7 @@ export default function TopDestinations() {
             <p className="text-[14px] sm:text-[15px] lg:text-[16px] leading-[22px] sm:leading-[24px] font-medium font-[ubuntu] text-[#464549] px-2 sm:px-0">
               The City of Love, where romance, art, and fashion intertwine.
               Immerse yourself in the enchanting atmosphere of the Eiffel Tower,
-              explore the Louvre's masterpieces, and indulge in world-class
+              explore the Louvre&apos;s masterpieces, and indulge in world-class
               cuisine.
             </p>
           </div>

@@ -21,12 +21,14 @@ import { updateProfile } from "firebase/auth";
 
 import { auth } from "@/config/firebase";
 import toast from "react-hot-toast";
+import type { User as FirebaseUser } from "firebase/auth";
+import Image from "next/image";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
-  const [user, setUser] = useState<any | null>(null);
+const [user, setUser] = useState<FirebaseUser | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const profileRef = useRef<HTMLDivElement | null>(null);
@@ -66,9 +68,10 @@ function Header() {
       await updateProfile(auth.currentUser, { displayName: newName });
       setUser({ ...auth.currentUser });
       setIsEditOpen(false);
-    } catch (err) {
-       toast.error("Update failed");
+    } catch {
+      toast.error("Update failed");
     }
+
   };
 
   const toggleMenu = () => {
@@ -83,11 +86,14 @@ function Header() {
       <div className="relative z-10">
         <div className="header-container max-w-[1320px] mx-auto px-4 md:px-10 lg:px-16 xl:px-0 space-y-4 mb-10">
           <nav className="header-nav max-w-[1320px] h-[80px] mx-auto flex items-center justify-between mt-[20px] relative z-50 gap-4 lg:gap-8 xl:gap-10">
-            <img
+            <Image
               src="/images/Logo.png"
               alt="Logo"
+              width={138}
+              height={40}
               className="w-[138px] h-[40px] z-[9999]"
             />
+
             <div className="below-800:flex hidden items-center">
               <button onClick={toggleMenu} className="text-[#EC9105]">
                 <HamburgerIocn />

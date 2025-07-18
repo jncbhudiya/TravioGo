@@ -5,6 +5,7 @@ import {
   WorldWhiteIcon,
 } from "@/assets/icon/page";
 import React from "react";
+import Image from "next/image";
 
 function Step() {
   return (
@@ -70,9 +71,11 @@ function Step() {
           <div className="w-full lg:w-[645px] h-auto lg:h-[549px]  relative rounded-[30px] overflow-hidden ">
             {/* Girl Image */}
             <div>
-              <img
+              <Image
                 src="/images/stepgirl.jpg"
                 alt="Woman with luggage"
+                width={645}
+                height={489}
                 className="w-full h-[300px] sm:h-[400px] mt-15 lg:h-[489px] object-cover rounded-[30px] object-right-top"
               />
             </div>
@@ -87,11 +90,14 @@ function Step() {
         border-white rounded-[50px] overflow-hidden shadow-lg 
         hidden xl:block"
             >
-              <img
-                src="/images/hillstep.jpg"
-                alt="Mountain view"
-                className="w-full h-full object-cover"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/hillstep.jpg"
+                  alt="Mountain view"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
             {/* Country Card */}
             <div

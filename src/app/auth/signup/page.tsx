@@ -14,6 +14,8 @@ import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { setUser, setError, setLoading } from "../../../store/authslice";
 import { InputField } from "../../commoncomponent/InputField";
 import toast from "react-hot-toast";
+import Image from "next/image";
+import { FirebaseError } from "firebase/app";
 
 function Signup() {
   const dispatch = useAppDispatch();
@@ -60,29 +62,31 @@ function Signup() {
         toast.success("Account created successfully!", { id: toastId });
         router.push("/");
       }
-    } catch (error: any) {
-      let errorMessage = "Signup failed. Please try again.";
-      switch (error.code) {
-        case "auth/email-already-in-use":
-          errorMessage = "Email is already in use.";
-          break;
-        case "auth/invalid-email":
-          errorMessage = "Invalid email address.";
-          break;
-        case "auth/operation-not-allowed":
-          errorMessage = "Email/password accounts are not enabled.";
-          break;
-        case "auth/weak-password":
-          errorMessage = "Password is too weak.";
-          break;
-        default:
-          errorMessage = error.message || errorMessage;
-      }
-
-      toast.error(errorMessage, { id: toastId });
-      dispatch(setError(errorMessage));
-      console.error("Signup Error:", error);
-    } finally {
+   } catch (error: unknown) {
+  let errorMessage = "Signup failed. Please try again.";
+  if (error instanceof FirebaseError) {
+    switch (error.code) {
+      case "auth/email-already-in-use":
+        errorMessage = "Email is already in use.";
+        break;
+      case "auth/invalid-email":
+        errorMessage = "Invalid email address.";
+        break;
+      case "auth/operation-not-allowed":
+        errorMessage = "Email/password accounts are not enabled.";
+        break;
+      case "auth/weak-password":
+        errorMessage = "Password is too weak.";
+        break;
+      default:
+        errorMessage = error.message;
+    }
+  }
+  toast.error(errorMessage, { id: toastId });
+  dispatch(setError(errorMessage));
+  console.error("Signup Error:", error);
+}
+ finally {
       dispatch(setLoading(false));
     }
   };
@@ -134,10 +138,12 @@ function Signup() {
         <div className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05]  p-6 text-center">
           <div className="flex justify-center mb-4">
             <Link href="/" passHref>
-              <img
+              <Image
                 src="/images/Logo.png"
                 alt="Travel Logo"
-                className="w-40 h-auto object-contain"
+                width={160}
+                height={60}
+                className="object-contain"
               />
             </Link>
           </div>

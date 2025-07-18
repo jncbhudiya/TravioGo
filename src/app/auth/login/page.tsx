@@ -8,18 +8,18 @@ import { useSelector } from "react-redux";
 import { auth } from "@/config/firebase";
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { RootState } from "@/store";
-import { clearError, setError, setLoading, setUser } from "@/store/authslice";
+import { clearError, setLoading, setUser } from "@/store/authslice";
 import { Email, Eye, EyeOff, Lock } from "@/assets/icon/page";
 import { InputField } from "@/app/commoncomponent/InputField";
 import toast from "react-hot-toast";
+import { FirebaseError } from "firebase/app";
+import Image from "next/image";
 
 function Login() {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  const { error: errorMsg, isLoading } = useSelector(
-    (state: RootState) => state.auth
-  );
+  const { isLoading } = useSelector((state: RootState) => state.auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,9 +40,10 @@ function Login() {
       toast.success("Logged in successfully!");
 
       router.push("/");
-    } catch (error: any) {
-      toast.error("Invalid credentials. Please try again or sign up.");
-      console.error("Login Error:", error);
+    } catch (error: unknown) {
+      const firebaseError = error as FirebaseError;
+      toast.error(firebaseError.message || "Invalid credentials.");
+      console.error("Login Error:", firebaseError);
     } finally {
       dispatch(setLoading(false));
     }
@@ -55,10 +56,12 @@ function Login() {
         <div className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05] p-6 text-center">
           <div className="flex justify-center mb-2">
             <Link href="/" passHref>
-              <img
+              <Image
                 src="/images/Logo.png"
                 alt="Travel Logo"
-                className="w-40 h-auto object-contain"
+                width={160}
+                height={40}
+                className="object-contain"
               />
             </Link>
           </div>

@@ -22,9 +22,9 @@ export const SendIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-send-2"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -32,10 +32,9 @@ export const SendIcon = () => (
     <path d="M6.5 12h14.5" />
   </svg>
 );
-
 export const Calender = () => (
   <svg
-    className="w-6 h-6 text-[#29363F] "
+    className="w-6 h-6 text-[#29363F]"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -45,9 +44,9 @@ export const Calender = () => (
   >
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
     />
   </svg>
@@ -65,9 +64,9 @@ export const CalenderWhiteIcon = () => (
   >
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
     />
   </svg>
@@ -102,9 +101,9 @@ export const FaceIcon = () => (
   >
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="M15 9h.01M8.99 9H9m12 3a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM6.6 13a5.5 5.5 0 0 0 10.81 0H6.6Z"
     />
   </svg>
@@ -121,9 +120,9 @@ export const FaceWhiteIcon = () => (
   >
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="M15 9h.01M8.99 9H9m12 3a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM6.6 13a5.5 5.5 0 0 0 10.81 0H6.6Z"
     />
   </svg>
@@ -266,9 +265,9 @@ export const RightBlackSmallArrow = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -286,9 +285,9 @@ export const BlackCrossRightArrow = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -328,13 +327,12 @@ export const SearchIcon = () => (
   >
     <path
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeWidth="2"
       d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
     />
   </svg>
 );
-
 export const WorldIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -343,9 +341,9 @@ export const WorldIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-planet text-[#29363F]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -362,9 +360,9 @@ export const WorldWhiteIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-planet"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -415,9 +413,9 @@ export const HotelIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-buildings text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -456,9 +454,9 @@ export const ActivityIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-bike text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -608,9 +606,9 @@ export const StarYellowIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-star text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -626,9 +624,9 @@ export const StarWhiteIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-star text-white"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -643,9 +641,9 @@ export const StarIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-star text-[#464549]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -702,9 +700,9 @@ export const DestinationsIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-map-pins"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -723,9 +721,9 @@ export const ToursIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-plane-tilt"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -741,9 +739,9 @@ export const ContactUsIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-phone-ringing"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -801,9 +799,9 @@ export const Logout = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-logout text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -821,9 +819,9 @@ export const DollarIocn = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-currency-dollar text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -840,9 +838,9 @@ export const UserAddIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-user-plus text-amber-700"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -860,9 +858,9 @@ export const LoginIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-login-2 text-white"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -880,9 +878,9 @@ export const Eye = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-eye"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -899,9 +897,9 @@ export const EyeOff = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-eye-off"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -912,25 +910,25 @@ export const EyeOff = () => (
 );
 
 export const Google = () => (
-    <svg width="20" height="20" viewBox="0 0 48 48">
-      <path
-        fill="#EA4335"
-        d="M24 9.5c3.54 0 6.68 1.23 9.15 3.63l6.85-6.85C35.14 2.88 29.96 0 24 0 14.83 0 7.02 5.34 3.24 13.11l8.3 6.44C13.35 13.41 18.3 9.5 24 9.5z"
-      />
-      <path
-        fill="#4285F4"
-        d="M46.1 24.5c0-1.64-.15-3.21-.42-4.72H24v9.04h12.4c-.54 2.87-2.17 5.3-4.6 6.95l7.15 5.55C43.76 37.24 46.1 31.3 46.1 24.5z"
-      />
-      <path
-        fill="#FBBC05"
-        d="M11.54 28.15A14.48 14.48 0 0 1 9.5 24c0-1.45.25-2.84.7-4.15L1.9 13.11A23.96 23.96 0 0 0 0 24c0 3.98.97 7.72 2.7 11l8.84-6.85z"
-      />
-      <path
-        fill="#34A853"
-        d="M24 48c6.48 0 11.9-2.14 15.87-5.83l-7.32-5.68c-2.12 1.42-4.84 2.26-8.55 2.26-5.67 0-10.48-3.82-12.2-9.03l-8.84 6.85C7.12 43.24 14.99 48 24 48z"
-      />
-      <path fill="none" d="M0 0h48v48H0z" />
-    </svg>
+  <svg width="20" height="20" viewBox="0 0 48 48">
+    <path
+      fill="#EA4335"
+      d="M24 9.5c3.54 0 6.68 1.23 9.15 3.63l6.85-6.85C35.14 2.88 29.96 0 24 0 14.83 0 7.02 5.34 3.24 13.11l8.3 6.44C13.35 13.41 18.3 9.5 24 9.5z"
+    />
+    <path
+      fill="#4285F4"
+      d="M46.1 24.5c0-1.64-.15-3.21-.42-4.72H24v9.04h12.4c-.54 2.87-2.17 5.3-4.6 6.95l7.15 5.55C43.76 37.24 46.1 31.3 46.1 24.5z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M11.54 28.15A14.48 14.48 0 0 1 9.5 24c0-1.45.25-2.84.7-4.15L1.9 13.11A23.96 23.96 0 0 0 0 24c0 3.98.97 7.72 2.7 11l8.84-6.85z"
+    />
+    <path
+      fill="#34A853"
+      d="M24 48c6.48 0 11.9-2.14 15.87-5.83l-7.32-5.68c-2.12 1.42-4.84 2.26-8.55 2.26-5.67 0-10.48-3.82-12.2-9.03l-8.84 6.85C7.12 43.24 14.99 48 24 48z"
+    />
+    <path fill="none" d="M0 0h48v48H0z" />
+  </svg>
 );
 
 export const Edit = () => (
@@ -941,9 +939,9 @@ export const Edit = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="icon icon-tabler icons-tabler-outline icon-tabler-edit text-[#EC9105]"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />

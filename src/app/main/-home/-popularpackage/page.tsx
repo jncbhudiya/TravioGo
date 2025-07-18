@@ -12,6 +12,7 @@ import {
 import React, { useRef } from "react";
 import { tourPackages } from "./tourPackages";
 import Title from "../commoncomponent/-title/page";
+import Image from "next/image";
 
 function Populartour() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -40,10 +41,12 @@ function Populartour() {
                 >
                   {/* Image */}
                   <div className="relative w-full aspect-[4/3] mb-3">
-                    <img
-                      src={pkg.image}
+                    <Image
+                      src={pkg.image || "/images/fallback.jpg"}
                       alt={pkg.title}
-                      className="w-full h-full object-cover rounded-xl"
+                      fill
+                      className="object-cover rounded-xl"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px"
                     />
                     <button className="absolute h-7 w-7 top-3 right-3 p-1.5 bg-white rounded-full shadow-md text-gray-700 hover:text-red-500 hover:bg-gray-100 transition-colors">
                       <HeartIcon />

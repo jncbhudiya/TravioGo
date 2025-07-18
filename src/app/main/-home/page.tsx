@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import Trendingdestinations from "./-trendingdestinations/page";
 import Searchpanel from "./-searchpanel/page";

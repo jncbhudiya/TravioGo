@@ -1,7 +1,7 @@
 export const tourPackages = [
   {
     id: 1,
-    image: "images/beach.jpg",
+    image: "/images/beach.jpg",
     title: "Beach Bliss",
     duration: "5 Nights | 6 Days",
     rating: 4.7,
@@ -13,7 +13,7 @@ export const tourPackages = [
   },
   {
     id: 2,
-    image: "images/mount.jpg",
+    image: "/images/mount.jpg",
     title: "Himalayan Escape",
     duration: "7 Nights | 8 Days",
     rating: 4.1,
@@ -25,7 +25,7 @@ export const tourPackages = [
   },
   {
     id: 3,
-    image: "images/temple.jpg",
+    image: "/images/temple.jpg",
     title: "Heritage Tour",
     duration: "4 Nights | 5 Days",
     rating: 4.2,
@@ -37,7 +37,7 @@ export const tourPackages = [
   },
   {
     id: 4,
-    image: "images/lakeview.jpg",
+    image: "/images/lakeview.jpg",
     title: "Kerala Backwaters",
     duration: "3 Nights | 4 Days",
     rating: 4.5,
@@ -49,7 +49,7 @@ export const tourPackages = [
   },
   {
     id: 5,
-    image: "images/templefront.jpg",
+    image: "/images/templefront.jpg",
     title: "Desert Safari",
     duration: "2 Nights | 3 Days",
     rating: 4.0,

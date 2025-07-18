@@ -6,6 +6,7 @@ import {
   SendIcon,
 } from "@/assets/icon/page";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -15,10 +16,12 @@ export default function Footer() {
           <div className="flex flex-wrap justify-between gap-2">
             <div className="w-full sm:w-[420px] space-y-6">
               <div className="flex items-center gap-2">
-                <img
-                  src="images/Logo.png"
+                <Image
+                  src="/images/Logo.png"
                   alt="Travel Logo"
-                  className="h-10 w-auto rounded-full"
+                  width={120}
+                  height={40}
+                  className="rounded-full"
                 />
               </div>
 

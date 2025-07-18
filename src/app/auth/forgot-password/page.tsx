@@ -1,10 +1,11 @@
 "use client";
-import { Email, LeftArrow, LeftOrangeArrow, Lock } from "@/assets/icon/page";
+import { LeftOrangeArrow} from "@/assets/icon/page";
 import { auth } from "../../../config/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { FirebaseError } from "firebase/app";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -22,11 +23,12 @@ export default function ForgotPassword() {
       setMessage("Password reset link sent! Check your email.");
       toast.success("Password reset link sent! Check your email.");
       setEmail("");
-    } catch (err: any) {
-      if (err.code === "auth/user-not-found") {
+    } catch (err: unknown) {
+      const error = err as FirebaseError;
+      if (error.code === "auth/user-not-found") {
         setError("No account found with this email.");
         toast.error("No account found with this email.");
-      } else if (err.code === "auth/invalid-email") {
+      } else if (error.code === "auth/invalid-email") {
         setError("Invalid email address.");
         toast.error("Invalid email address.");
       } else {
@@ -34,6 +36,7 @@ export default function ForgotPassword() {
         toast.error("Something went wrong. Try again.");
       }
     }
+
   };
 
   return (
@@ -44,7 +47,7 @@ export default function ForgotPassword() {
             Reset Password
           </h1>
           <p className="text-sm text-gray-500 mt-1 font-[ubuntu]">
-            We'll send you a link to reset your password
+            We&apos;ll send you a link to reset your password
           </p>
         </div>
 
@@ -79,7 +82,7 @@ export default function ForgotPassword() {
             className="flex items-center gap-2 text-sm font-[ubuntu] text-[#EC9105] hover:text-[#d47f04] transition-colors"
           >
             <div className="group w-[32px] h-[32px] border border-[#EC9105] rounded-full flex items-center justify-center shadow hover:bg-[#EC9105]/10 transition-all duration-200">
-              <LeftOrangeArrow  />
+              <LeftOrangeArrow />
             </div>
             <span className="mt-[2px]">Back to Login</span>
           </button>

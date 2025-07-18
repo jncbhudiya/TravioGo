@@ -1,9 +1,9 @@
 import {
   StarBalckFilledIcon,
   StarFilledWhiteIcon,
-  StarWhiteIcon,
 } from "@/assets/icon/page";
 import React from "react";
+import Image from "next/image";
 
 function Testimonials() {
   return (
@@ -17,8 +17,8 @@ function Testimonials() {
               What our customers are saying us?
             </h2>
             <p className="font-[ubuntu] font-medium text-[#464549] text-base leading-[24px] opacity-80 max-w-full lg:max-w-[540px]">
-              Don't just take our word for it. See what our travelers have to
-              say about their incredible journeys with us.
+              Don&apos;t just take our word for it. See what our travelers have
+              to say about their incredible journeys with us.
             </p>
           </div>
           {/* Stats */}
@@ -50,11 +50,14 @@ function Testimonials() {
             {/* Header */}
             <div className="flex flex-row items-center justify-between mb-4">
               <div className="flex items-center gap-4 flex-1 min-w-0">
-                <img
+                <Image
                   src="/images/people.png"
                   alt="User"
-                  className="w-14 h-14 md:w-18 md:h-18 rounded-full object-cover flex-shrink-0"
+                  width={56} // or 72 for md size if needed
+                  height={56}
+                  className="rounded-full object-cover flex-shrink-0 w-14 h-14 md:w-18 md:h-18"
                 />
+
                 <div className="flex flex-col min-w-0">
                   <p className="text-[#2D2C2F] text-[16px] leading-[24px] font-medium font-[ubuntu] truncate">
                     Esther Howard
