@@ -110,23 +110,28 @@ function Signup() {
 
       toast.success("Google signup successful!", { id: toastId });
       router.push("/");
-    } catch (error: any) {
-      let errorMessage = "Google signup failed. Please try again.";
-      switch (error.code) {
-        case "auth/account-exists-with-different-credential":
-          errorMessage = "Account exists with different sign-in method.";
-          break;
-        case "auth/popup-closed-by-user":
-          errorMessage = "Signup popup was closed.";
-          break;
-        default:
-          errorMessage = error.message || errorMessage;
-      }
+    } catch (error: unknown) {
+  let errorMessage = "Google signup failed. Please try again.";
 
-      toast.error(errorMessage, { id: toastId });
-      dispatch(setError(errorMessage));
-      console.error("Google Signup Error:", error);
-    } finally {
+  if (error instanceof FirebaseError) {
+    switch (error.code) {
+      case "auth/account-exists-with-different-credential":
+        errorMessage = "Account exists with different sign-in method.";
+        break;
+      case "auth/popup-closed-by-user":
+        errorMessage = "Signup popup was closed.";
+        break;
+      default:
+        errorMessage = error.message || errorMessage;
+    }
+  } else if (error instanceof Error) {
+    errorMessage = error.message;
+  }
+
+  toast.error(errorMessage, { id: toastId });
+  dispatch(setError(errorMessage));
+  console.error("Google Signup Error:", error);
+} finally {
       dispatch(setLoading(false));
     }
   };
