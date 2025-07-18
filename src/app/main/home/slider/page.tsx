@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import Header from "../-header/page";
+import Header from "../header/page";
 import { LeftWhiteArrow, RightArrow } from "@/assets/icon/page";
 
 const backgroundImages = [

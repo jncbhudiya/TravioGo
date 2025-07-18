@@ -1,13 +1,13 @@
 import React from "react";
-import Trendingdestinations from "./-trendingdestinations/page";
-import Searchpanel from "./-searchpanel/page";
-import Footer from "./-footer/page";
-import Populartour from "./-popularpackage/page";
-import Blog from "./-blog/page";
-import Step from "./-step/page";
-import Topdestination from "./-topdestination/page";
-import Testmonials from "./-testimonials/page";
-import Slider from "./-slider/page";
+import Trendingdestinations from "./trendingdestinations/page";
+import Searchpanel from "./searchpanel/page";
+import Footer from "./footer/page";
+import Populartour from "./popularpackage/page";
+import Blog from "./blog/page";
+import Step from "./step/page";
+import Topdestination from "./topdestination/page";
+import Testmonials from "./testimonials/page";
+import Slider from "./slider/page";
 
 function Homepage() {
   return (

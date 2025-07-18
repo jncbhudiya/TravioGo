@@ -10,7 +10,7 @@ import {
   StarIcon,
 } from "@/assets/icon/page";
 import React, { useRef } from "react";
-import data from "./../../../../data.json";
+import data from "../../../../data.json";
 import Title from "../../../../commoncomponent/-title/title";
 import Image from "next/image";
 

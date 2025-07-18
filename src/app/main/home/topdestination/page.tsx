@@ -3,7 +3,7 @@
 import React from "react";
 import DestinationCard from "./destinationcard";
 import { RightArrow } from "@/assets/icon/page";
-import data from "./../../../../data.json";
+import data from "../../../../data.json";
 
 
 export default function TopDestinations() {

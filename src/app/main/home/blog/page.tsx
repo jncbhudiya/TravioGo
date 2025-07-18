@@ -3,7 +3,7 @@ import { RightArrow } from "@/assets/icon/page";
 import React, { useRef } from "react";
 import Title from "../../../../commoncomponent/-title/title";
 import Image from "next/image";
-import data from "./../../../../data.json";
+import data from "../../../../data.json";
 
 function Blog() {
   const scrollRef = useRef<HTMLDivElement>(null);
