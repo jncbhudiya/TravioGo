@@ -9,7 +9,7 @@ import { auth } from "@/config/firebase";
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { RootState } from "@/store";
 import { clearError, setLoading, setUser } from "@/store/authslice";
-import { Email, Eye, EyeOff, Lock } from "@/assets/icon/page";
+import { Email, Eye, EyeOff, HomeWhiteIcon, Lock } from "@/assets/icon/page";
 import { InputField } from "@/commoncomponent/InputField";
 import toast from "react-hot-toast";
 import { FirebaseError } from "firebase/app";
@@ -53,20 +53,53 @@ function Login() {
     <div className="min-h-screen flex items-center justify-center bg-[#FEF5E6] p-4">
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05] p-6 text-center">
-          <div className="flex justify-center mb-2">
-            <Link href="/" passHref>
-              <Image
-                src="/images/Logo.png"
-                alt="Travel Logo"
-                width={160}
-                height={40}
-                className="object-contain"
-              />
-            </Link>
+
+        <div className="bg-gradient-to-r from-[#EC9105] to-[#FBBC05] py-8 px-4 sm:py-10 sm:px-6 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white"></div>
+            <div className="absolute bottom-5 right-5 w-16 h-16 rounded-full bg-white"></div>
+            <div className="absolute top-1/3 right-10 w-12 h-12 rounded-full bg-white"></div>
           </div>
-          <h1 className="text-2xl font-bold text-white font-[ubuntu]">Login</h1>
+
+          <div className="relative z-10 max-w-6xl mx-auto">
+            {/* Logo & Home Button */}
+            <div className="flex justify-between items-center mb-6">
+              <button
+                onClick={() => router.push("/")}
+                className="flex items-center gap-2 group"
+                aria-label="Go to homepage"
+              >
+                <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center shadow-md hover:bg-white/20 transition-all duration-300 hover:rotate-12">
+                  <HomeWhiteIcon />
+                </div>
+              </button>
+
+              <div className="mx-4 flex-1 flex justify-center">
+                <Link
+                  href="/"
+                  passHref
+                  className="focus:outline-none hover:animate-pulse"
+                >
+                  <Image
+                    src="/images/Logo.png"
+                    alt="Travel Logo"
+                    width={180}
+                    height={70}
+                    className="object-contain hover:scale-105 transition-transform duration-300"
+                    priority
+                  />
+                </Link>
+              </div>
+
+              <div className="w-10 h-10" />
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white font-[ubuntu] tracking-tight mb-2">
+              Login
+            </h1>
+          </div>
         </div>
+   
 
         {/* Form section */}
         <div className="p-8">
