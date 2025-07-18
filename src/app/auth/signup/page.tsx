@@ -12,7 +12,7 @@ import { Email, Google, Lock, User } from "../../../assets/icon/page";
 import Link from "next/link";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { setUser, setError, setLoading } from "../../../store/authslice";
-import { InputField } from "../../commoncomponent/InputField";
+import { InputField } from "../../../commoncomponent/InputField";
 import toast from "react-hot-toast";
 import Image from "next/image";
 import { FirebaseError } from "firebase/app";

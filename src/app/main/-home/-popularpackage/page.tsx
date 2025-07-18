@@ -10,12 +10,13 @@ import {
   StarIcon,
 } from "@/assets/icon/page";
 import React, { useRef } from "react";
-import { tourPackages } from "./tourPackages";
-import Title from "../commoncomponent/-title/title";
+import data from "./../../../../data.json";
+import Title from "../../../../commoncomponent/-title/title";
 import Image from "next/image";
 
 function Populartour() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const tourPackages = data.tourPackages;
 
   return (
     <>

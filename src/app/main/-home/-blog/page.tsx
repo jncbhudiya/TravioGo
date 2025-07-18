@@ -1,13 +1,13 @@
 "use client";
 import { RightArrow } from "@/assets/icon/page";
 import React, { useRef } from "react";
-import { blogPosts } from "./blogpost";
-import Title from "../commoncomponent/-title/title";
+import Title from "../../../../commoncomponent/-title/title";
 import Image from "next/image";
+import data from "./../../../../data.json";
 
 function Blog() {
   const scrollRef = useRef<HTMLDivElement>(null);
-
+  const blogPosts = data.blogPosts;
   return (
     // <section className="w-full bg-[#FEF5E6] py-16 px-6  md:px-10 lg:px-24 ">
     <section className="w-full bg-[#FEF5E6] py-16 sm:py-2 md:py-5 lg:py-12 px-6 md:px-10 lg:px-24">

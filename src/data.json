@@ -1,0 +1,112 @@
+{
+  "destinations": [
+    { "city": "Paris, France", "image": "/images/france.jpg", "rating": 4.9 },
+    { "city": "Rome, Italy", "image": "/images/rome.jpg", "rating": 4.7 },
+    {
+      "city": "London, England",
+      "image": "/images/england.jpg",
+      "rating": 4.2
+    },
+    { "city": "Barcelona, Spain", "image": "/images/spain.jpg", "rating": 4.4 },
+    {
+      "city": "Berlin, Germany",
+      "image": "/images/germany.jpg",
+      "rating": 4.0
+    },
+    { "city": "Athens, Greece", "image": "/images/greece.jpg", "rating": 4.2 }
+  ],
+  "tourPackages": [
+    {
+      "id": 1,
+      "image": "/images/beach.jpg",
+      "title": "Beach Bliss",
+      "duration": "5 Nights | 6 Days",
+      "rating": 4.7,
+      "flights": 2,
+      "hotels": 1,
+      "transfers": 3,
+      "activities": 6,
+      "price": "₹88,952"
+    },
+    {
+      "id": 2,
+      "image": "/images/mount.jpg",
+      "title": "Himalayan Escape",
+      "duration": "7 Nights | 8 Days",
+      "rating": 4.1,
+      "flights": 1,
+      "hotels": 2,
+      "transfers": 4,
+      "activities": 2,
+      "price": "₹40,000"
+    },
+    {
+      "id": 3,
+      "image": "/images/temple.jpg",
+      "title": "Heritage Tour",
+      "duration": "4 Nights | 5 Days",
+      "rating": 4.2,
+      "flights": 2,
+      "hotels": 1,
+      "transfers": 1,
+      "activities": 4,
+      "price": "₹35,000"
+    },
+    {
+      "id": 4,
+      "image": "/images/lakeview.jpg",
+      "title": "Kerala Backwaters",
+      "duration": "3 Nights | 4 Days",
+      "rating": 4.5,
+      "flights": 2,
+      "hotels": 2,
+      "transfers": 1,
+      "activities": 3,
+      "price": "₹65,500"
+    },
+    {
+      "id": 5,
+      "image": "/images/templefront.jpg",
+      "title": "Desert Safari",
+      "duration": "2 Nights | 3 Days",
+      "rating": 4.0,
+      "flights": 1,
+      "hotels": 1,
+      "transfers": 2,
+      "activities": 2,
+      "price": "₹25,000"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "image": "/images/blog1.jpg",
+      "title": "Uncover Hidden Gems: Off-the-Beaten-Path Destinations",
+      "description": "Discover lesser-known travel treasures. Explore authentic cultures and breathtaking landscapes far from the usual tourist crowds. Find unique experiences that will leave you with lasting memories and a deeper appreciation for the world."
+    },
+    {
+      "id": 2,
+      "image": "/images/blog2.jpg",
+      "title": "Sustainable Travel: Making a Positive Impact",
+      "description": "Conscious travel choices matter. Learn how to minimize your carbon footprint while exploring the world responsibly. Support local communities and preserve natural beauty for future generations. Make every journey a step towards a better planet."
+    },
+    {
+      "id": 3,
+      "image": "/images/blog3.jpg",
+      "title": "Explore the World Without Breaking the Bank",
+      "description": "Travel on a shoestring without compromising on experiences. Discover money-saving hacks, affordable destinations, and smart budgeting tips to make your travel dreams a reality. Adventure awaits, even on a tight budget!"
+    },
+    {
+      "id": 4,
+      "image": "/images/blog2.jpg",
+      "title": "Sustainable Travel: Making a Positive Impact",
+      "description": "Conscious travel choices matter. Learn how to minimize your carbon footprint while exploring the world responsibly. Support local communities and preserve natural beauty for future generations. Make every journey a step towards a better planet."
+    },
+    {
+      "id": 5,
+      "image": "/images/blog3.jpg",
+      "title": "Explore the World Without Breaking the Bank",
+      "description": "Travel on a shoestring without compromising on experiences. Discover money-saving hacks, affordable destinations, and smart budgeting tips to make your travel dreams a reality. Adventure awaits, even on a tight budget!"
+    }
+  ]
+}

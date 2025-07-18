@@ -10,7 +10,7 @@ import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { RootState } from "@/store";
 import { clearError, setLoading, setUser } from "@/store/authslice";
 import { Email, Eye, EyeOff, Lock } from "@/assets/icon/page";
-import { InputField } from "@/app/commoncomponent/InputField";
+import { InputField } from "@/commoncomponent/InputField";
 import toast from "react-hot-toast";
 import { FirebaseError } from "firebase/app";
 import Image from "next/image";

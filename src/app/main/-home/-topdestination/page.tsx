@@ -2,11 +2,13 @@
 
 import React from "react";
 import DestinationCard from "./destinationcard";
-import { destinations } from "./topdestination";
 import { RightArrow } from "@/assets/icon/page";
+import data from "./../../../../data.json";
 
 
 export default function TopDestinations() {
+ const destinations = data.destinations;
+
   return (
     <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-24 ">
       <div className="max-w-[1320px] mx-auto text-center mb-10">
