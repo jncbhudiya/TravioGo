@@ -2,7 +2,7 @@
 
 import { BlackCrossRightArrow } from "@/assets/icon/page";
 import React, { useRef } from "react";
-import Title from "../commoncomponent/-title/page";
+import Title from "../commoncomponent/-title/title";
 import Image from "next/image";
 
 const trending = [

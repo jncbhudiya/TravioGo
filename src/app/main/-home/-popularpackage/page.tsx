@@ -11,7 +11,7 @@ import {
 } from "@/assets/icon/page";
 import React, { useRef } from "react";
 import { tourPackages } from "./tourPackages";
-import Title from "../commoncomponent/-title/page";
+import Title from "../commoncomponent/-title/title";
 import Image from "next/image";
 
 function Populartour() {

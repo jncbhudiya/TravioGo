@@ -1,7 +1,7 @@
 // Title.tsx
 "use client";
 import React from "react";
-import Arrow from "../-arrow/page";
+import Arrow from "../-arrow/arrow";
 
 type TitleProps = {
   scrollRef: React.RefObject<HTMLDivElement | null>;
